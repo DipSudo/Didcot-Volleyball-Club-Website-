@@ -1,1 +1,25 @@
-h1{color: red;}
+body{
+
+    background-color: rgb(118, 153, 104);
+    color: yellowgreen;
+    font-size: 50px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 50px;
+
+}
+
+button{
+
+    font-size: px;
+    margin-top: 50px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius:50px;
+    border: 1px;
+    font-weight: bold;
+}
+
+
