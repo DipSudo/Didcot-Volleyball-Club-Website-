@@ -1,19 +1,31 @@
-/* Basic styles for layout and aesthetics */
-body {
-    font-family: Arial, sans-serif;
+/* Reset default styling */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Basic styles for layout and aesthetics */
+body {
+    font-family: Arial, sans-serif;
+    scroll-behavior: smooth;  /* Smooth scrolling between sections */
+}
+
+/* Main container styling */
 .main {
     text-align: center;
     padding: 20px;
 }
 
+/* Navigation Bar */
 .nav-wrapper {
     background-color: #333;
     padding: 10px 0;
+    position: sticky;  /* Keeps the navbar fixed at the top while scrolling */
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    overflow: hidden;
 }
 
 .nav-wrapper a {
@@ -30,12 +42,14 @@ body {
     border-radius: 5px;
 }
 
+/* Header Section (Hero Section) */
 header {
-    background-image: url('volleyball-bg.jpg');
+    background-image: url('volleyball-bg.jpg');  /* Replace with your image */
     background-size: cover;
     background-position: center;
     color: white;
     padding: 100px 20px;
+    text-align: center;
 }
 
 header h1 {
@@ -48,10 +62,119 @@ header h2 {
     font-size: 30px;
 }
 
+/* General Section Styling */
+section {
+    padding: 60px 20px;        /* Space inside the section */
+    min-height: 100vh;         /* Each section takes full viewport height */
+    display: flex;             /* Flexbox for centering content */
+    justify-content: center;   /* Horizontally center content */
+    align-items: center;       /* Vertically center content */
+    text-align: center;        /* Center align text */
+}
+
+/* Home Section */
+#home {
+    background-color: #f4f4f4;  /* Light background color */
+    color: #333;
+}
+
+#home h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+#home p {
+    font-size: 1.2em;
+}
+
+/* About Section */
+#about {
+    background-color: #e2e2e2;
+    color: #444;
+}
+
+#about h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+#about p {
+    font-size: 1.1em;
+}
+
+/* About Volleyball Section */
+#volleyball {
+    background-color: #cfcfcf;
+    color: #555;
+}
+
+#volleyball h2 {
+    font-size: 2.5em;
+}
+
+#volleyball p {
+    font-size: 1.1em;
+}
+
+/* Gallery Section */
+#gallery {
+    background-color: #bdbdbd;
+    color: #666;
+}
+
+#gallery h2 {
+    font-size: 2.5em;
+}
+
+#gallery p {
+    font-size: 1.1em;
+}
+
+/* Contact Section */
+#contact {
+    background-color: #a9a9a9;
+    color: white;
+}
+
+#contact h2 {
+    font-size: 2.5em;
+}
+
+#contact p {
+    font-size: 1.1em;
+}
+
+/* Content Sections in General */
 .content-section {
     padding: 40px 20px;
 }
 
 .content-section h3 {
     color: #333;
+}
+
+/* Additional Styles for Consistency */
+section h2, section h3 {
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+section p {
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+/* Responsive Adjustments for Smaller Screens */
+@media screen and (max-width: 768px) {
+    header h1 {
+        font-size: 40px;
+    }
+
+    header h2 {
+        font-size: 25px;
+    }
+
+    section {
+        padding: 40px 10px;
+    }
 }
