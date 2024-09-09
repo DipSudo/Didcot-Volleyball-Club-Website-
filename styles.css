@@ -67,6 +67,7 @@ section {
     padding: 60px 20px;        /* Space inside the section */
     min-height: 100vh;         /* Each section takes full viewport height */
     display: flex;             /* Flexbox for centering content */
+    flex-direction: column;    /* Stack items vertically */
     justify-content: center;   /* Horizontally center content */
     align-items: center;       /* Vertically center content */
     text-align: center;        /* Center align text */
@@ -80,11 +81,13 @@ section {
 
 #home h1 {
     font-size: 3em;
-    margin-bottom: 20px;
+    margin-bottom: 20px;  /* Space below the heading */
 }
 
 #home p {
     font-size: 1.2em;
+    margin-top: 0;        /* Ensure no top margin */
+    margin-bottom: 10px;  /* Space below the paragraph */
 }
 
 /* About Section */
@@ -95,11 +98,13 @@ section {
 
 #about h2 {
     font-size: 2.5em;
-    margin-bottom: 20px;
+    margin-bottom: 20px;  /* Space below the heading */
 }
 
 #about p {
     font-size: 1.1em;
+    margin-top: 0;        /* Ensure no top margin */
+    margin-bottom: 10px;  /* Space below the paragraph */
 }
 
 /* About Volleyball Section */
@@ -110,10 +115,13 @@ section {
 
 #volleyball h2 {
     font-size: 2.5em;
+    margin-bottom: 20px;  /* Space below the heading */
 }
 
 #volleyball p {
     font-size: 1.1em;
+    margin-top: 0;        /* Ensure no top margin */
+    margin-bottom: 10px;  /* Space below the paragraph */
 }
 
 /* Gallery Section */
@@ -124,10 +132,13 @@ section {
 
 #gallery h2 {
     font-size: 2.5em;
+    margin-bottom: 20px;  /* Space below the heading */
 }
 
 #gallery p {
     font-size: 1.1em;
+    margin-top: 0;        /* Ensure no top margin */
+    margin-bottom: 10px;  /* Space below the paragraph */
 }
 
 /* Contact Section */
@@ -138,10 +149,13 @@ section {
 
 #contact h2 {
     font-size: 2.5em;
+    margin-bottom: 20px;  /* Space below the heading */
 }
 
 #contact p {
     font-size: 1.1em;
+    margin-top: 0;        /* Ensure no top margin */
+    margin-bottom: 10px;  /* Space below the paragraph */
 }
 
 /* Content Sections in General */
