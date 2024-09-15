@@ -42,9 +42,19 @@
 
     <section id="contact">
         <h2>Contact Us</h2>
-        <p>If you'd like to join the club or have any questions, feel free to contact us.</p>
-        <!-- Contact form or details can be added here -->
+        <p>If you have any questions, feel free to contact us using the form below.</p>
+    
+        <form id="contactForm" action="mailto:your-email@example.com" method="post" enctype="text/plain">
+            <label for="email">Your Email:</label>
+            <input type="email" id="email" name="email" required>
+    
+            <label for="message">Your Message:</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+    
+            <button type="submit">Send Message</button>
+        </form>
     </section>
+    
 
 </body>
 </html>
