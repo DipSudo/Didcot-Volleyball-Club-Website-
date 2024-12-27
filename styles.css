@@ -21,7 +21,7 @@ body {
 .nav-wrapper {
     background-color: #333;
     padding: 10px 0;
-    position: sticky;  /* Keeps the navbar fixed at the top while scrolling */
+    position: sticky;
     top: 0;
     z-index: 1000;
     width: 100%;
@@ -35,16 +35,18 @@ body {
     font-size: 18px;
     padding: 10px 20px;
     display: inline-block;
+    transition: color 0.3s;
 }
 
-.nav-wrapper a:hover {
-    background-color: #575757;
-    border-radius: 5px;
+.nav-wrapper a:hover,
+.nav-wrapper a.active {
+    color: #ddd; /* Subtle hover effect */
+    border-bottom: 2px solid #fff; /* Indicate active link */
 }
 
 /* Header Section (Hero Section) */
 header {
-    background-image: url('volleyball-bg.jpg');  /* Replace with your image */
+    background-image: url('volleyball-bg.jpg');
     background-size: cover;
     background-position: center;
     color: white;
@@ -55,142 +57,43 @@ header {
 header h1 {
     font-size: 50px;
     margin: 0;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
 header h2 {
     margin-top: 10px;
     font-size: 30px;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
 }
 
 /* General Section Styling */
 section {
-    padding: 60px 20px;        /* Space inside the section */
-    min-height: 100vh;         /* Each section takes full viewport height */
-    display: flex;             /* Flexbox for centering content */
-    flex-direction: column;    /* Stack items vertically */
-    justify-content: center;   /* Horizontally center content */
-    align-items: center;       /* Vertically center content */
-    text-align: center;        /* Center align text */
+    padding: 60px 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: background-color 0.5s, color 0.5s;
 }
 
-/* Home Section */
-#home {
-    background-color: #f4f4f4;  /* Light background color */
+/* Consistent Section Styling */
+#home, #about, #volleyball, #gallery, #contact {
+    background-color: #f4f4f4;
     color: #333;
 }
 
-#home h1 {
-    font-size: 3em;
-    margin-bottom: 20px;  /* Space below the heading */
-}
-
-#home p {
-    font-size: 1.2em;
-    margin-top: 0;        /* Ensure no top margin */
-    margin-bottom: 10px;  /* Space below the paragraph */
-}
-
-/* About Section */
-#about {
-    background-color: #f4f4f4;  /* Light background color */
-    color: #333;
-}
-
-#about h2 {
+#home h1, #about h2, #volleyball h2, #gallery h2, #contact h2 {
+    margin-bottom: 20px;
     font-size: 2.5em;
-    margin-bottom: 20px;  /* Space below the heading */
-}
-
-#about p {
-    font-size: 1.1em;
-    margin-top: 0;        /* Ensure no top margin */
-    margin-bottom: 10px;  /* Space below the paragraph */
-}
-
-/* About Volleyball Section */
-#volleyball {
-    background-color: #f4f4f4;  /* Light background color */
-    color: #333;
-}
-
-#volleyball h2 {
-    font-size: 2.5em;
-    margin-bottom: 20px;  /* Space below the heading */
-}
-
-#volleyball p {
-    font-size: 1.1em;
-    margin-top: 0;        /* Ensure no top margin */
-    margin-bottom: 10px;  /* Space below the paragraph */
-}
-
-/* Gallery Section */
-#gallery {
-    background-color: #f4f4f4;  /* Light background color */
-    color: #333;
-}
-
-#gallery h2 {
-    font-size: 2.5em;
-    margin-bottom: 20px;  /* Space below the heading */
-}
-
-#gallery p {
-    font-size: 1.1em;
-    margin-top: 0;        /* Ensure no top margin */
-    margin-bottom: 10px;  /* Space below the paragraph */
-}
-
-/* Contact Section */
-#contact {
-    background-color: #f4f4f4;  /* Light background color */
-    color: #333;
-}
-
-#contact h2 {
-    font-size: 2.5em;
-    margin-bottom: 20px;  /* Space below the heading */
-}
-
-#contact p {
-    font-size: 1.1em;
-    margin-top: 0;        /* Ensure no top margin */
-    margin-bottom: 10px;  /* Space below the paragraph */
-}
-
-/* Content Sections in General */
-.content-section {
-    padding: 40px 20px;
-}
-
-.content-section h3 {
-    color: #333;
-}
-
-/* Additional Styles for Consistency */
-section h2, section h3 {
-    margin-bottom: 15px;
     font-weight: bold;
 }
 
-section p {
+#home p, #about p, #volleyball p, #gallery p, #contact p {
     line-height: 1.5;
+    font-size: 1.2em;
     margin-bottom: 10px;
-}
-
-/* Responsive Adjustments for Smaller Screens */
-@media screen and (max-width: 768px) {
-    header h1 {
-        font-size: 40px;
-    }
-
-    header h2 {
-        font-size: 25px;
-    }
-
-    section {
-        padding: 40px 10px;
-    }
 }
 
 /* Contact Form Styles */
@@ -205,18 +108,13 @@ form {
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-form label {
-    margin-bottom: 5px;
-    font-size: 1.1em;
-    color: #444;
-}
-
 form input, form textarea {
     margin-bottom: 20px;
     padding: 10px;
     font-size: 1em;
     border: 1px solid #ccc;
     border-radius: 4px;
+    transition: border-color 0.3s, box-shadow 0.3s;
 }
 
 form button {
@@ -227,27 +125,55 @@ form button {
     border-radius: 4px;
     cursor: pointer;
     font-size: 1.1em;
+    transition: background-color 0.3s, transform 0.2s;
 }
 
 form button:hover {
     background-color: #575757;
+    transform: translateY(-2px);
 }
 
 /* Join Me Button Styling */
 .btn-join {
-    display: inline-block;       /* Ensures the button behaves like a block */
-    background-color: #28a745;  /* Button background colour (green) */
-    color: white;               /* Text colour */
-    padding: 10px 20px;         /* Padding inside the button */
-    font-size: 18px;            /* Font size */
-    border: none;               /* No border */
-    border-radius: 5px;         /* Rounded corners */
-    text-decoration: none;      /* Removes underline from the hyperlink */
-    cursor: pointer;            /* Pointer cursor on hover */
-    transition: background-color 0.3s; /* Smooth hover effect */
+    display: inline-block;
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
 }
 
-/* Hover Effect for the Button */
 .btn-join:hover {
-    background-color: #218838; /* Darker green on hover */
+    background-color: #218838;
+    transform: translateY(-2px);
+}
+
+.nav-wrapper a.active {
+    color: #fff;
+    border-bottom: 2px solid #fff; /* Highlight with an underline */
+    font-weight: bold;            /* Optional: Make it bold */
+}
+
+
+#backToTop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #333;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: none; /* Hidden by default */
+    z-index: 1000;
+    transition: opacity 0.3s;
+}
+
+#backToTop:hover {
+    background: #575757;
 }
