@@ -158,22 +158,40 @@ form button:hover {
     font-weight: bold;            /* Optional: Make it bold */
 }
 
-
-#backToTop {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: #333;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-    display: none; /* Hidden by default */
-    z-index: 1000;
-    transition: opacity 0.3s;
+/* Banner Styles */
+.banner {
+    width: 100%;                  /* Full width */
+    height: 250px;                /* Adjust height as needed */
+    overflow: hidden;             /* Ensures no content spills out */
+    position: relative;           /* Ensure proper positioning */
 }
 
-#backToTop:hover {
-    background: #575757;
+.banner-img {
+    width: 100%;                  /* Make image responsive */
+    height: 120%;                 /* Make it fill the banner */
+    object-fit: cover;            /* Ensures no distortion */
+}
+
+/* Navigation Bar Styles */
+.nav-wrapper {
+    background-color: #333;
+    padding: 10px 0;
+    position: sticky;             /* Sticky at the top */
+    top: 0;
+    z-index: 1000;                /* Ensures it's on top of content */
+    text-align: center;
+}
+
+.nav-wrapper a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 18px;
+    padding: 10px 20px;
+    display: inline-block;
+}
+
+.nav-wrapper a:hover {
+    background-color: #575757;
+    border-radius: 5px;
 }
