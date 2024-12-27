@@ -233,3 +233,21 @@ form button:hover {
     background-color: #575757;
 }
 
+/* Join Me Button Styling */
+.btn-join {
+    display: inline-block;       /* Ensures the button behaves like a block */
+    background-color: #28a745;  /* Button background colour (green) */
+    color: white;               /* Text colour */
+    padding: 10px 20px;         /* Padding inside the button */
+    font-size: 18px;            /* Font size */
+    border: none;               /* No border */
+    border-radius: 5px;         /* Rounded corners */
+    text-decoration: none;      /* Removes underline from the hyperlink */
+    cursor: pointer;            /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Smooth hover effect */
+}
+
+/* Hover Effect for the Button */
+.btn-join:hover {
+    background-color: #218838; /* Darker green on hover */
+}
