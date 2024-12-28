@@ -53,8 +53,10 @@ body {
 /* Social Media Links */
 .social-media {
     display: flex;                      /* Flexbox to arrange social icons horizontally */
-    align-items: right;                /* Vertically align icons */
+    align-items: center;                /* Vertically align icons */
     margin-left: 10px; /* Add margin for spacing between icons */
+    text-align: right;
+    float: right
 }
 
 .social-media a {
