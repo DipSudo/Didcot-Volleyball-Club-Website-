@@ -57,3 +57,13 @@ form.addEventListener("submit", (e) => {
         alert("Please enter a valid email address.");
     }
 });
+
+// JavaScript to add active class on click
+const navLinks = document.querySelectorAll('.nav-links a');
+
+navLinks.forEach(link => {
+    link.addEventListener('click', function() {
+        navLinks.forEach(link => link.classList.remove('active')); // Remove 'active' from all links
+        this.classList.add('active'); // Add 'active' to the clicked link
+    });
+});

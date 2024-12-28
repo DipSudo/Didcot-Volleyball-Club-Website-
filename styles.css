@@ -18,15 +18,59 @@ body {
 }
 
 /* Navigation Bar */
+/* Navigation Bar */
 .nav-wrapper {
+    display: flex;                      /* Flexbox for layout */
+    justify-content: space-between;     /* Space between nav links and social media */
+    align-items: center;                /* Vertically align items */
     background-color: #333;
-    padding: 10px 0;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+    padding: 10px 20px;
     width: 100%;
-    overflow: hidden;
+    box-sizing: border-box;             /* Ensure padding does not affect width */
 }
+
+/* Center the Nav Links */
+.nav-links {
+    display: flex;                      /* Flexbox to display links horizontally */
+    justify-content: center;            /* Center align the links */
+    flex-grow: 1;                        /* Allow this section to take up available space */
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 18px;
+    padding: 10px 20px;
+    display: inline-block;
+}
+
+.nav-links a:hover {
+    background-color: #575757;
+    border-radius: 5px;
+}
+
+/* Social Media Links */
+.social-media {
+    display: flex;                      /* Flexbox to arrange social icons horizontally */
+    align-items: right;                /* Vertically align icons */
+    margin-left: 10px; /* Add margin for spacing between icons */
+}
+
+.social-media a {
+    color: white;
+    font-size: 20px;
+    margin-left: 10px;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.social-media a:hover {
+    color: #575757;                     /* Change icon color on hover */
+}
+
+/* Optional: Add Font Awesome Icons (make sure you link to Font Awesome in your HTML) */
+
 
 .nav-wrapper a {
     color: white;
