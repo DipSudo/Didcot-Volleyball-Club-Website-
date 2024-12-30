@@ -141,42 +141,66 @@ section {
     margin-bottom: 10px;
 }
 
-/* Contact Form Styles */
+/* Form Styling */
+/* Apply Roboto font globally */
+body, form, input, textarea, button {
+    font-family: 'Roboto', sans-serif; /* Set Roboto font */
+}
+
+/* Form container */
 form {
     display: flex;
     flex-direction: column;
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
+    width: 100%;                          /* Ensure form takes full width */
+    max-width: 1200px;                    /* Set max-width for the form */
+    margin: 0 auto;                       /* Center the form */
+    padding: 50px;
     background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+    box-sizing: border-box; /* Ensure padding doesn't cause layout issues */
 }
 
-form input, form textarea {
-    margin-bottom: 20px;
-    padding: 10px;
-    font-size: 1em;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+/* Email Input Field - Moderate Size but Wider */
+form input {
+    margin-bottom: 20px;              /* Space between input fields */
+    padding: 15px;                    /* Moderate padding for the email input */
+    font-size: 1.2em;                 /* Moderate font size */
+    border: 2px solid #ccc;           /* Thicker border for consistency */
+    border-radius: 6px;               /* Rounded corners */
+    width: 100%;                      /* Make input field take full width */
     transition: border-color 0.3s, box-shadow 0.3s;
 }
 
+/* Message Textarea - Large and Wider */
+form textarea {
+    margin-bottom: 20px;              /* Space between fields */
+    padding: 15px;                    /* Larger padding for the textarea */
+    font-size: 1.2em;                 /* Larger font size for better readability */
+    border: 2px solid #ccc;           /* Thicker border */
+    border-radius: 6px;              /* More rounded corners */
+    width: 100%;                      /* Make textarea take full width */
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+/* Button Styling */
 form button {
-    padding: 10px 20px;
+    padding: 25px 50px;               /* Larger button padding */
     background-color: #333;
     color: white;
     border: none;
-    border-radius: 4px;
+    border-radius: 10px;              /* Rounded corners for button */
     cursor: pointer;
-    font-size: 1.1em;
+    font-size: 1.6em;                 /* Larger font size */
     transition: background-color 0.3s, transform 0.2s;
 }
 
+/* Button Hover Effect */
 form button:hover {
     background-color: #575757;
-    transform: translateY(-2px);
+    transform: translateY(-2px);      /* Subtle hover effect */
 }
+
 
 /* Join Me Button Styling */
 .btn-join {
