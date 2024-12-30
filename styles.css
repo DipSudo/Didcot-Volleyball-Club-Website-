@@ -49,29 +49,28 @@ body {
     background-color: #575757;
     border-radius: 5px;
 }
-
 /* Social Media Links */
 .social-media {
-    display: flex;                      /* Flexbox to arrange social icons horizontally */
+    display: flex;                      /* Flexbox for horizontal alignment */
     align-items: center;                /* Vertically align icons */
-    margin-left: 10px; /* Add margin for spacing between icons */
-    text-align: right;
-    float: right
+    justify-content: flex-end;          /* Push icons to the right */
+    gap: 3px;                           /* Minimal spacing between icons */
+    margin: 0;                          /* Remove any margin */
+    padding: 0;                         /* Remove any padding */
 }
 
 .social-media a {
     color: white;
     font-size: 20px;
-    margin-left: 10px;
     text-decoration: none;
-    transition: color 0.3s;
+    transition: color 0.3s ease-in-out;
 }
 
 .social-media a:hover {
     color: #575757;                     /* Change icon color on hover */
 }
 
-/* Optional: Add Font Awesome Icons (make sure you link to Font Awesome in your HTML) */
+
 
 
 .nav-wrapper a {
@@ -204,19 +203,25 @@ form button:hover {
     font-weight: bold;            /* Optional: Make it bold */
 }
 
-/* Banner Styles */
+/* Banner Container */
 .banner {
-    width: 100%;                  /* Full width */
-    height: 250px;                /* Adjust height as needed */
-    overflow: hidden;             /* Ensures no content spills out */
-    position: relative;           /* Ensure proper positioning */
+    width: 100%;                     /* Full width of the browser */
+    height: calc(50vw * 0.2);        /* Dynamically scale height based on viewport width */
+    position: relative;              /* Enable positioning for the image */
+    overflow: hidden;                /* Prevent content overflow */
+    background-color: #000;          /* Add a background colour for letterboxing */
 }
 
+/* Banner Image */
 .banner-img {
-    width: 100%;                  /* Make image responsive */
-    height: 120%;                 /* Make it fill the banner */
-    object-fit: cover;            /* Ensures no distortion */
+    width: 100%;                     /* Ensure image spans full width */
+    height: 100%;                    /* Ensure image spans full height */
+    object-fit: contain;             /* Fit the entire image without cropping */
+    object-position: center;         /* Center the image within the container */
+    display: block;                  /* Eliminate inline spacing */
 }
+
+
 
 /* Navigation Bar Styles */
 .nav-wrapper {
