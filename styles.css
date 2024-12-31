@@ -18,7 +18,6 @@ body {
 }
 
 /* Navigation Bar */
-/* Navigation Bar */
 .nav-wrapper {
     display: flex;                      /* Flexbox for layout */
     justify-content: space-between;     /* Space between nav links and social media */
@@ -152,7 +151,7 @@ section {
 #home p, #about p, #volleyball p, #gallery p, #contact p {
     line-height: 1.5;
     font-size: 1.2em;
-    margin-bottom: 10px;
+    margin-bottom: 1px;
 }
 
 /* Form Styling */
@@ -215,25 +214,6 @@ form button:hover {
     transform: translateY(-2px);      /* Subtle hover effect */
 }
 
-
-/* Join Me Button Styling */
-.btn-join {
-    display: inline-block;
-    background-color: #28a745;
-    color: white;
-    padding: 10px 20px;
-    font-size: 18px;
-    border: none;
-    border-radius: 5px;
-    text-decoration: none;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.2s;
-}
-
-.btn-join:hover {
-    background-color: #218838;
-    transform: translateY(-2px);
-}
 
 .nav-wrapper a.active {
     color: #fff;
@@ -309,9 +289,9 @@ form button:hover {
 }
 
 .session-card {
-    border: 1px solid #ddd;
+    border: 1000px solid #ddd;
     border-radius: 8px;
-    padding: 20px;
+    padding: 10px;
     margin: 10px auto;
     max-width: 1400px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -323,33 +303,100 @@ form button:hover {
     margin-bottom: 10px;
 }
 
-.session-card {
-    margin: 20px auto;  /* Keep the card centred horizontally */
-}
-
-.session-card p, .session-card h3 {
-    text-align: center; /* Center only the text inside the card */
-}
-
-
-.session-card {
-    margin: 20px auto; /* Centre the card horizontally */
-    text-align: center; /* Align text to the left */
-    max-width: 800px; /* Constrain width */
-}
-
 p {
-    margin: 5px 0; /* Adjust this value as needed */
+    margin-bottom: 10px; /* Reduce space below the paragraph */
 }
 
-#about p {
-    margin: 50px 0; /* Minimal spacing for paragraphs */
+#sessions {
+    padding: 0; /* Remove extra padding around the section */
+    margin: 0; /* Remove extra margin around the section */
 }
 
 .session-card {
-    margin: 10px 0; /* Reduce top and bottom margins */
+    margin: 10px auto; /* Ensure consistent spacing for the card */
+    max-width: 1000px; /* Optional: Adjust width if needed */
+    text-align: center; /* Align text inside the card */
+    border: 1px solid rgb(83, 83, 172);
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
+
+
 
 .session-card {
     border: 1px solid rgb(83, 83, 172);
+}
+
+
+
+/* Join Me Button Styling */
+.btn-join {
+    display: inline-block;
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    font-size: 20px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn-join:hover {
+    background-color: #218838;
+    transform: translateY(-2px);
+}
+
+#join h2 {
+    margin-bottom: 20px; /* Add spacing below the heading */
+}
+
+#join a.btn-join {
+    display: inline-block; /* Ensures proper spacing */
+    margin-bottom: 20px; /* Add spacing below the button */
+    padding: 10px 20px; /* Add padding to the button */
+    background-color: rgb(28, 170, 92);; /* Button background colour */
+    color: white; /* Button text colour */
+    text-decoration: none; /* Remove underline */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 16px; /* Adjust font size */
+}
+
+#join p {
+    margin-bottom: 20px; /* Add spacing below the paragraph */
+}
+
+#contactForm {
+    display: flex;
+    flex-direction: column; /* Stack form elements vertically */
+    gap: 15px; /* Space between form elements */
+}
+
+#contactForm label {
+    margin-bottom: 5px; /* Add space below labels */
+}
+
+#contactForm input,
+#contactForm textarea {
+    width: 100%; /* Full width inputs */
+    padding: 10px; /* Padding for better usability */
+    border: 1px solid #ccc; /* Light border for inputs */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 14px; /* Adjust font size */
+}
+
+#contactForm button {
+    padding: 10px 20px;
+    background-color: rgb(28, 170, 92);; /* Button background colour */;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#contactForm button:hover {
+    background-color: rgb(28, 170, 92);; /* Button background colour */
 }
