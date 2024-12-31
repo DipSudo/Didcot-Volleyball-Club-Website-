@@ -91,7 +91,7 @@ body {
 
 /* Header Section (Hero Section) */
 header {
-    background-image: url('volleyball-bg.jpg');
+
     background-size: cover;
     background-position: center;
     color: white;
@@ -99,18 +99,32 @@ header {
     text-align: center;
 }
 
+
+/* H1 Styling */
 header h1 {
     font-size: 50px;
-    margin: 0;
+    margin: 0 0 20px 0; /* Top: 0, Bottom: 20px */
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
+/* H2 Styling */
 header h2 {
-    margin-top: 10px;
     font-size: 30px;
+    margin: 20px 0 30px 0; /* Top: 20px, Bottom: 15px */
     text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
 }
 
+/* H3 Styling */
+header h3 {
+    font-size: 30px;
+    margin: 20px 0 50px 0; /* Top: 20px, Bottom: 50px */
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Paragraph Styling */
+header p {
+    margin: 10px 0 20px 0; /* Top: 10px, Bottom: 20px */
+}
 /* General Section Styling */
 section {
     padding: 60px 20px;
@@ -270,3 +284,28 @@ form button:hover {
     background-color: #575757;
     border-radius: 5px;
 }
+
+#sessions {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.session-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 1400px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.session-card h3 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.session-card p {
+    margin: 5px 0;
+}
+
