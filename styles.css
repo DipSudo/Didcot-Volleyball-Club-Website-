@@ -285,16 +285,34 @@ form button:hover {
     border-radius: 5px;
 }
 
+#about {
+    display: flex; /* Ensures proper alignment */
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Centers child elements horizontally */
+    text-align: center; /* Centers text */
+}
+
+.session-card {
+    margin: 20px auto;
+    text-align: center; /* Align text inside the card */
+    max-width: 800px; /* Ensure consistent width */
+}
+
+
 #sessions {
-    padding: 40px 20px;
-    text-align: center;
+    padding: 20px;
+    border: 1px solid transparent; /* Transparent border prevents margin collapse */
+}
+
+#sessions p {
+    margin-bottom: 1px; /* Reduced space for paragraphs */
 }
 
 .session-card {
     border: 1px solid #ddd;
     border-radius: 8px;
     padding: 20px;
-    margin: 20px auto;
+    margin: 10px auto;
     max-width: 1400px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     text-align: left;
@@ -305,7 +323,33 @@ form button:hover {
     margin-bottom: 10px;
 }
 
-.session-card p {
-    margin: 5px 0;
+.session-card {
+    margin: 20px auto;  /* Keep the card centred horizontally */
 }
 
+.session-card p, .session-card h3 {
+    text-align: center; /* Center only the text inside the card */
+}
+
+
+.session-card {
+    margin: 20px auto; /* Centre the card horizontally */
+    text-align: center; /* Align text to the left */
+    max-width: 800px; /* Constrain width */
+}
+
+p {
+    margin: 5px 0; /* Adjust this value as needed */
+}
+
+#about p {
+    margin: 50px 0; /* Minimal spacing for paragraphs */
+}
+
+.session-card {
+    margin: 10px 0; /* Reduce top and bottom margins */
+}
+
+.session-card {
+    border: 1px solid rgb(83, 83, 172);
+}
