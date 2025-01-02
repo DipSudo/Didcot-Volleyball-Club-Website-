@@ -137,18 +137,18 @@ section {
 }
 
 /* Consistent Section Styling */
-#home, #about, #volleyball, #gallery, #contact {
+#home, #about, #volleyball, #gallery, #contact, #resources, #teams {
     background-color: #f4f4f4;
     color: #333;
 }
 
-#home h1, #about h2, #volleyball h2, #gallery h2, #contact h2 {
+#home h1, #about h2, #volleyball h2, #gallery h2, #contact h2, #resources h2, #teams h2 {
     margin-bottom: 20px;
     font-size: 2.5em;
     font-weight: bold;
 }
 
-#home p, #about p, #volleyball p, #gallery p, #contact p {
+#home p, #about p, #volleyball p, #gallery p, #contact p, #resources p, #teams p{
     line-height: 1.5;
     font-size: 1.2em;
     margin-bottom: 1px;
