@@ -410,3 +410,46 @@ p {
     background-color: #f4f4f4; /* Optional: Set background for better visibility */
 }
 
+h3 {
+    margin-top: 20px; /* Adjust the value as needed */
+}
+
+p {
+    margin-top: 20px; /* Adjust the value as needed */
+}
+
+
+.team-card {
+    border: 2px solid #ccc;
+    padding: 15px;
+    margin-bottom: 20px; /* Space between teams */
+    text-align: center;
+}
+
+.team-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.team-header h3 {
+    margin-right: 15px; /* Space between team name and logo */
+}
+
+.team-logo {
+    width: 20%; /* Adjust size of the logo */
+    height: auto;
+    object-fit: contain;
+}
+
+.team-photo {
+    width: 80%; /* Adjust size of the team photo */
+    height: auto;
+    object-fit: cover;
+    margin-bottom: 15px; /* Space below the photo */
+}
+
+h3 {
+    color: #333;
+}
