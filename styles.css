@@ -265,20 +265,6 @@ form button:hover {
     border-radius: 5px;
 }
 
-#about {
-    display: flex; /* Ensures proper alignment */
-    flex-direction: column; /* Stack elements vertically */
-    align-items: center; /* Centers child elements horizontally */
-    text-align: center; /* Centers text */
-}
-
-.session-card {
-    margin: 20px auto;
-    text-align: center; /* Align text inside the card */
-    max-width: 800px; /* Ensure consistent width */
-}
-
-
 #sessions {
     padding: 20px;
     border: 1px solid transparent; /* Transparent border prevents margin collapse */
@@ -316,16 +302,10 @@ p {
     margin: 10px auto; /* Ensure consistent spacing for the card */
     max-width: 1000px; /* Optional: Adjust width if needed */
     text-align: center; /* Align text inside the card */
-    border: 1px solid rgb(83, 83, 172);
+    border: 2px solid rgb(11, 14, 12);
     border-radius: 8px;
     padding: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-
-
-.session-card {
-    border: 1px solid rgb(83, 83, 172);
 }
 
 
@@ -419,17 +399,6 @@ p {
     font-size: 1.2em; /* Adjust font size for readability */
 }
 
-/* Session Card Styling */
-.session-card {
-    margin: 0 auto; /* Center the card horizontally */
-    max-width: 800px; /* Restrict card width */
-    text-align: left; /* Align text inside the card to the left */
-    border: 1px solid rgb(83, 83, 172); /* Add border */
-    border-radius: 8px; /* Rounded corners for aesthetics */
-    padding: 20px; /* Add spacing inside the card */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Shadow for depth */
-}
-
 #about {
     display: flex; /* Use flexbox for alignment */
     flex-direction: column; /* Stack items vertically */
@@ -441,12 +410,3 @@ p {
     background-color: #f4f4f4; /* Optional: Set background for better visibility */
 }
 
-.session-card {
-    margin: 20px auto; /* Center the card horizontally */
-    max-width: 800px; /* Restrict card width */
-    text-align: center; /* Align text inside the card */
-    border: 1px solid rgb(83, 83, 172); /* Add border */
-    border-radius: 8px; /* Rounded corners for aesthetics */
-    padding: 20px; /* Add spacing inside the card */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Shadow for depth */
-}
