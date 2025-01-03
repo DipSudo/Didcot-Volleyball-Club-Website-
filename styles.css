@@ -429,3 +429,24 @@ p {
     padding: 20px; /* Add spacing inside the card */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Shadow for depth */
 }
+
+#about {
+    display: flex; /* Use flexbox for alignment */
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+    justify-content: center; /* Center items vertically */
+    text-align: center; /* Center-align text */
+    padding: 60px 20px; /* Add spacing around the section */
+    min-height: 100vh; /* Ensure it takes full viewport height */
+    background-color: #f4f4f4; /* Optional: Set background for better visibility */
+}
+
+.session-card {
+    margin: 20px auto; /* Center the card horizontally */
+    max-width: 800px; /* Restrict card width */
+    text-align: center; /* Align text inside the card */
+    border: 1px solid rgb(83, 83, 172); /* Add border */
+    border-radius: 8px; /* Rounded corners for aesthetics */
+    padding: 20px; /* Add spacing inside the card */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+}
