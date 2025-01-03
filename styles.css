@@ -137,7 +137,7 @@ section {
 }
 
 /* Consistent Section Styling */
-#home, #about, #volleyball, #gallery, #contact, #resources, #teams {
+#home, #about, #volleyball, #gallery, #contact, #resources, #teams, #join{
     background-color: #f4f4f4;
     color: #333;
 }
@@ -399,4 +399,33 @@ p {
 
 #contactForm button:hover {
     background-color: rgb(28, 170, 92);; /* Button background colour */
+}
+
+/* About Section Styling */
+#about {
+    display: block; /* Default layout for simplicity */
+    text-align: center; /* Center-align text */
+    padding: 60px 20px; /* Add spacing around the section */
+}
+
+/* Center h2 and p */
+#about h2 {
+    margin-bottom: 10px; /* Space below the heading */
+    font-size: 2em; /* Adjust font size */
+}
+
+#about p {
+    margin-bottom: 20px; /* Space below the paragraph */
+    font-size: 1.2em; /* Adjust font size for readability */
+}
+
+/* Session Card Styling */
+.session-card {
+    margin: 0 auto; /* Center the card horizontally */
+    max-width: 800px; /* Restrict card width */
+    text-align: left; /* Align text inside the card to the left */
+    border: 1px solid rgb(83, 83, 172); /* Add border */
+    border-radius: 8px; /* Rounded corners for aesthetics */
+    padding: 20px; /* Add spacing inside the card */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Shadow for depth */
 }
