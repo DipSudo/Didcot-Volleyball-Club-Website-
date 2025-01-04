@@ -73,13 +73,15 @@ h3 {
     margin: 0;                          /* Remove any margin */
     padding: 0;                         /* Remove any padding */
 }
-
 .social-media a {
+    display: inline-block;              /* Ensures the link is properly clickable */
     color: white;
     font-size: 20px;
     text-decoration: none;
     transition: color 0.3s ease-in-out;
+    z-index: 1000; /* Ensure icons are on top */
 }
+
 
 .social-media a:hover {
     color: #575757;                     /* Change icon color on hover */

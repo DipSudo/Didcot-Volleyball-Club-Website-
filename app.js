@@ -35,12 +35,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
 document.querySelectorAll('.nav-wrapper a').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
+        // Only prevent default if the link is an internal anchor link (i.e., starts with #)
+        if (this.getAttribute('href').startsWith('#')) {
+            e.preventDefault();  // Prevents default link behavior
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'  // Smooth scroll to the section
+            });
+        }
     });
 });
+
 
 const form = document.querySelector("form");
 
