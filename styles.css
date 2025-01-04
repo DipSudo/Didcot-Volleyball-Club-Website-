@@ -453,7 +453,6 @@ p {
     
 
 /*Teams */
-
 #teams {
     text-align: center;
     padding: 20px;
@@ -480,27 +479,38 @@ p {
 
 .team-header {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 15px;
+    justify-content: center; /* Centers content horizontally */
+    align-items: center; /* Centers content vertically */
+    margin-bottom: 10px; /* Reduced space between header and photo */
+    width: 100%; /* Ensures header takes full width */
 }
 
 .team-header h3 {
-    margin-right: 15px;
+    margin: 0; /* Removes default margin */
+    margin-right: 15px; /* Space between the h3 and logo */
 }
 
 .team-logo {
-    width: 100%; /* Ensure the logo fits within its container */
-    max-width: 50px; /* Max size for the logo */
-    height: auto; /* Maintains the aspect ratio */
-    object-fit: contain; /* Ensures the logo stays contained */
-    margin: 0 auto; /* Centers the logo */
+    width: 120px; /* Fixed size for logos */
+    height: 120px; /* Fixed size for logos */
+    object-fit: contain; /* Ensures logo keeps aspect ratio */
+}
+
+
+.team-info {
+    margin-left: 20px; /* Adds space between logo and info */
+    text-align: left; /* Align text to the left */
+}
+
+.team-info p {
+    margin: 5px 0; /* Space between each line of information */
 }
 
 .team-photo-container {
     position: relative;
     width: 100%; /* Matches the width of the card */
-    height: 250px; /* Fixed height for uniformity */
+    height: 0; /* Height set to 0 to control aspect ratio */
+    padding-top: 75%; /* Adjust this value to change the aspect ratio */
     overflow: hidden; /* Prevents content from spilling out */
     display: flex;
     justify-content: center; /* Horizontally centers the photo */
@@ -509,12 +519,18 @@ p {
 }
 
 .team-photo {
-    width: 100%; /* Ensures the photo stretches across the container */
-    max-width: 100%; /* Limits the width */
-    height: auto; /* Maintains the aspect ratio of the photo */
-    object-fit: contain; /* Keeps the image contained within the container */
-    object-position: center; /* Ensures the image is centered */
+    width: 80%; /* Reduce image width to 80% of the container width */
+    height: 80%; /* Reduce image height to 80% of the container height */
+    object-fit: contain; /* Ensures the image scales proportionally */
+    object-position: center; /* Ensures the image stays centered */
+    margin-top: 5px; /* Reduced margin between header and image */
 }
 
+.team-info a {
+    color: #007bff; /* Blue color for the link */
+    text-decoration: none; /* Removes the underline */
+}
 
-
+.team-info a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
