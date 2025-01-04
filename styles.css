@@ -295,7 +295,7 @@ form button:hover {
     border-radius: 8px;
     padding: 10px;
     margin: 10px auto;
-    max-width: 1400px;
+    max-width: 1600px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     text-align: left;
 }
@@ -316,7 +316,7 @@ p {
 
 .session-card {
     margin: 10px auto; /* Ensure consistent spacing for the card */
-    max-width: 1000px; /* Optional: Adjust width if needed */
+    max-width: 1200px; /* Optional: Adjust width if needed */
     text-align: center; /* Align text inside the card */
     border: 2px solid rgb(11, 14, 12);
     border-radius: 8px;
@@ -439,61 +439,6 @@ p {
     margin-top: 20px; /* Adjust the value as needed */
 }
 
-
-.team-card {
-    border: 2px solid #ccc;
-    padding: 15px;
-    margin-bottom: 20px; /* Space between teams */
-    text-align: center;
-}
-
-.team-header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 15px;
-}
-
-.team-header h3 {
-    margin-right: 15px; /* Space between team name and logo */
-}
-
-.team-logo {
-    width: 20%; /* Adjust size of the logo */
-    height: auto;
-    object-fit: contain;
-}
-
-.team-photo {
-    width: 80%; /* Adjust size of the team photo */
-    height: auto;
-    object-fit: cover;
-    margin-bottom: 15px; /* Space below the photo */
-}
-
-
-@media (max-width: 768px) {
-    #teams {
-        flex-direction: column;
-        align-items: center;
-    }
-    .team-card {
-        width: 100%;
-    }
-}
-.team-card:hover {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transform: translateY(-5px);
-    transition: 0.3s;
-}
-
-
-#teams {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-}
-
 /* Styling for the Junior Announcement */
 .junior-announcement {
     background-color: #fff3cd; /* Light yellow background for subtle emphasis */
@@ -504,149 +449,72 @@ p {
     border-radius: 4px; /* Rounded edges for a clean look */
     display: inline-block; /* Makes it a small inline box */
     margin-top: 10px; /* Adds spacing above */
-}
+    }
+    
 
-/* General Styling */
+/*Teams */
+
 #teams {
     text-align: center;
-    margin: 20px auto;
-    max-width: 1200px;
-    padding: 0 15px;
+    padding: 20px;
 }
 
-#teams h2 {
-    font-size: 2rem;
-    margin-bottom: 10px;
-}
-
-#teams p {
-    font-size: 1rem;
-    margin-bottom: 20px;
-}
-
-/* Team Container */
-.team-container {
+.teams-container {
     display: flex;
     justify-content: space-between;
-    align-items: center;
     gap: 20px;
-    margin-bottom: 30px;
+    flex-wrap: wrap;
+    margin: 0 auto;
+}
+
+.team-card {
+    flex: 1;
+    max-width: 45%; /* Cards should take up nearly half the container width */
     border: 2px solid #ccc;
-    border-radius: 8px;
     padding: 15px;
-    background-color: #f9f9f9;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* Team Card */
-.team-card {
-    flex: 1;
-    text-align: left;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-/* General Styling */
-#teams {
+    margin-bottom: 20px;
     text-align: center;
-    margin: 40px auto; /* Larger margin for visual balance */
-    max-width: 1400px; /* Wider content area */
-    padding: 0 30px; /* Increase padding */
+    box-sizing: border-box;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
-#teams h2 {
-    font-size: 2.5rem; /* Larger heading size */
-    margin-bottom: 15px;
-}
-
-#teams p {
-    font-size: 1.2rem; /* Larger font size for better readability */
-    margin-bottom: 30px;
-    line-height: 1.5; /* Improved text spacing */
-}
-
-/* Team Container */
-.team-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 40px; /* Larger gap between elements */
-    margin-bottom: 50px; /* Increased spacing between sections */
-    border: 2px solid #ccc;
-    border-radius: 10px;
-    padding: 20px; /* Increased padding for better spacing */
-    background-color: #f9f9f9;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Subtle shadow for depth */
-}
-
-/* Team Card */
-.team-card {
-    flex: 1;
-    text-align: left;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-/* Header: Team Name, Subtitle, and Logo */
 .team-header {
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px; /* Increased gap for spacing */
+    justify-content: center;
+    align-items: center;
     margin-bottom: 15px;
 }
 
 .team-header h3 {
-    margin: 0;
-    font-size: 1.8rem; /* Larger team name */
-}
-
-.team-subtitle {
-    font-size: 1.2rem; /* Subtle but visible subtitle */
-    color: #666;
-    margin: 0;
+    margin-right: 15px;
 }
 
 .team-logo {
-    width: 60px; /* Slightly larger logo */
-    height: 60px;
-    border-radius: 50%;
-    object-fit: contain;
-    margin-top: 10px;
+    width: 100%; /* Ensure the logo fits within its container */
+    max-width: 50px; /* Max size for the logo */
+    height: auto; /* Maintains the aspect ratio */
+    object-fit: contain; /* Ensures the logo stays contained */
+    margin: 0 auto; /* Centers the logo */
 }
 
-/* Team Description */
-.team-card p {
-    margin: 0;
-    font-size: 1.1rem; /* Slightly larger description text */
-    color: #555;
-    line-height: 1.4;
+.team-photo-container {
+    position: relative;
+    width: 100%; /* Matches the width of the card */
+    height: 250px; /* Fixed height for uniformity */
+    overflow: hidden; /* Prevents content from spilling out */
+    display: flex;
+    justify-content: center; /* Horizontally centers the photo */
+    align-items: center; /* Vertically centers the photo */
+    background-color: #f0f0f0; /* Optional: Placeholder background */
 }
 
-/* Team Action Photo */
-.team-action-photo {
-    width: 400px; /* Larger team photo */
-    height: 250px;
-    border-radius: 10px;
-    object-fit: cover;
-    object-position: center;
+.team-photo {
+    width: 100%; /* Ensures the photo stretches across the container */
+    max-width: 100%; /* Limits the width */
+    height: auto; /* Maintains the aspect ratio of the photo */
+    object-fit: contain; /* Keeps the image contained within the container */
+    object-position: center; /* Ensures the image is centered */
 }
 
-/* Responsive Scaling */
-@media (max-width: 1024px) {
-    #teams {
-        padding: 0 20px;
-    }
 
-    .team-container {
-        flex-direction: column;
-        text-align: center;
-    }
 
-    .team-action-photo {
-        width: 100%;
-        height: auto; /* Maintain aspect ratio */
-    }
-}
