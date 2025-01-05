@@ -116,3 +116,20 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 });
+
+// JavaScript for controlling thumbnail scrolling
+const prevButton = document.querySelector('.thumbnail-prev-button');
+const nextButton = document.querySelector('.thumbnail-next-button');
+const thumbnailsContainer = document.querySelector('.thumbnails-container');
+const thumbnailWidth = document.querySelector('.thumbnail').offsetWidth;
+const maxScroll = thumbnailsContainer.scrollWidth - thumbnailsContainer.offsetWidth;
+
+prevButton.addEventListener('click', () => {
+    let currentScroll = thumbnailsContainer.scrollLeft;
+    thumbnailsContainer.scrollLeft = Math.max(currentScroll - thumbnailWidth, 0);
+});
+
+nextButton.addEventListener('click', () => {
+    let currentScroll = thumbnailsContainer.scrollLeft;
+    thumbnailsContainer.scrollLeft = Math.min(currentScroll + thumbnailWidth, maxScroll);
+});
