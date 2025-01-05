@@ -542,14 +542,8 @@ p {
 /*Gallery */
 /* Use the same CSS for the gallery grid */
 
-/*Gallery */
-/* Use the same CSS for the gallery grid */
-/*Gallery */
-/* Use the same CSS for the gallery grid */
-/*Gallery */
-/* Use the same CSS for the gallery grid */
-/*Gallery */
-/* Use the same CSS for the gallery grid */
+
+
 #gallery {
     padding: 20px;
 }
@@ -558,6 +552,16 @@ p {
     flex-direction: column;
     align-items: center;
     gap: 50px;  /* Increased gap between elements */
+}
+
+.carousel-image {
+    display: none; /* Hide all images initially */
+    width: 100%;
+    height: auto;
+}
+
+.carousel-image.active {
+    display: block; /* Only show the active image */
 }
 
 .large-image-container {
@@ -579,33 +583,34 @@ p {
     height: auto;
     object-fit: cover;
 }
-
-.nav-button {
+/* Scoped navigation button styles for gallery */
+#gallery .nav-button {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     background-color: rgba(0, 0, 0, 0.5);
     color: white;
     border: none;
-    padding: 15px 20px;  /* Smaller button size */
-    font-size: 2.5em;  /* Smaller button size */
+    padding: 15px 20px;
+    font-size: 2.5em;
     cursor: pointer;
     z-index: 10;
     border-radius: 50%;
     outline: none;
 }
 
-.nav-button:hover {
+#gallery .nav-button:hover {
     background-color: rgba(0, 0, 0, 0.8);
 }
 
-#prev-button {
-    left: 1px;
+#gallery #prev-button {
+    left: 10px;
 }
 
-#next-button {
-    right: 1px;
+#gallery #next-button {
+    right: 10px;
 }
+
 
 .thumbnails {
     display: flex;
@@ -650,23 +655,5 @@ p {
     z-index: 10;
     border-radius: 50%;
     outline: none;
-}
-
-.thumbnail-nav-button:hover {
-    background-color: rgba(0, 0, 0, 0.8);
-}
-
-.thumbnail-prev-button {
-    position: absolute;
-    top: 50%;
-    left: 10px;
-    transform: translateY(-50%);
-}
-
-.thumbnail-next-button {
-    position: absolute;
-    top: 50%;
-    right: 10px;
-    transform: translateY(-50%);
 }
 
