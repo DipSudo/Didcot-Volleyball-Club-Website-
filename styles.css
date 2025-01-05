@@ -536,3 +536,99 @@ p {
 .team-info a:hover {
     text-decoration: underline; /* Underline on hover */
 }
+
+/*Gallery */
+
+/*Gallery */
+/* Use the same CSS for the gallery grid */
+
+/*Gallery */
+/* Use the same CSS for the gallery grid */
+/*Gallery */
+/* Use the same CSS for the gallery grid */
+/*Gallery */
+/* Use the same CSS for the gallery grid */
+#gallery {
+    padding: 20px;
+}
+
+.carousel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;  /* Increased gap between elements */
+}
+
+.large-image-container {
+    position: relative;
+    width: 100%;  /* Full width */
+    max-width: 1600px;  /* Even larger max-width for large image */
+    aspect-ratio: 16/9;
+    background-color: #eaeaea;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.large-image-container img {
+    width: 100%;  /* Full width of the container */
+    height: auto;
+    object-fit: cover;
+}
+
+.nav-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 15px 20px;  /* Smaller button size */
+    font-size: 2.5em;  /* Smaller button size */
+    cursor: pointer;
+    z-index: 10;
+    border-radius: 50%;
+    outline: none;
+}
+
+.nav-button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+#prev-button {
+    left: 10px;
+}
+
+#next-button {
+    right: 10px;
+}
+
+.thumbnails {
+    display: flex;
+    justify-content: center;
+    gap: 15px;  /* Reduced gap between thumbnails */
+    overflow-x: auto;
+    max-width: 1600px;  /* Prevents stretching too wide */
+}
+
+.thumbnails img {
+    width: 120px;  /* Smaller thumbnail width */
+    height: 90px;  /* Smaller thumbnail height */
+    object-fit: cover;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.2s, border 0.2s;
+}
+
+.thumbnails img.active {
+    border-color: #333;
+    transform: scale(1.2);  /* Slightly larger active thumbnail */
+}
+
+.thumbnails img:hover {
+    transform: scale(1.1);  /* Slightly larger thumbnail on hover */
+}

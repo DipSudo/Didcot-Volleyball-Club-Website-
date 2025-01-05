@@ -71,3 +71,48 @@ navLinks.forEach(link => {
         this.classList.add('active'); // Add 'active' to the clicked link
     });
 });
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const thumbnails = document.querySelectorAll(".thumbnail");
+    const largeImage = document.getElementById("large-image");
+    const prevButton = document.getElementById("prev-button");
+    const nextButton = document.getElementById("next-button");
+
+    let currentIndex = 0;
+
+    function updateGallery(index) {
+        // Ensure index is within bounds
+        if (index < 0) {
+            currentIndex = thumbnails.length - 1; // Wrap to last image
+        } else if (index >= thumbnails.length) {
+            currentIndex = 0; // Wrap to first image
+        } else {
+            currentIndex = index;
+        }
+
+        // Update large image
+        largeImage.src = thumbnails[currentIndex].src;
+
+        // Update active thumbnail
+        thumbnails.forEach(t => t.classList.remove("active"));
+        thumbnails[currentIndex].classList.add("active");
+    }
+
+    // Left button click
+    prevButton.addEventListener("click", () => {
+        updateGallery(currentIndex - 1);
+    });
+
+    // Right button click
+    nextButton.addEventListener("click", () => {
+        updateGallery(currentIndex + 1);
+    });
+
+    // Thumbnail click
+    thumbnails.forEach((thumbnail, index) => {
+        thumbnail.addEventListener("click", () => {
+            updateGallery(index);
+        });
+    });
+});
