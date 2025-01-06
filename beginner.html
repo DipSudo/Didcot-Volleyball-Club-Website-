@@ -19,6 +19,54 @@
     <img src="images\General\Logo.PNG" alt="Top Banner" class="banner-img">
 </div>
 
+<style>
+    /* Reset body and html to remove any default margin/padding */
+    html, body {
+        margin: 0;
+        padding: 0;
+        height: 100%; /* Ensure full page height */
+        overflow-x: hidden; /* Remove horizontal scroll if any */
+    }
+
+    /* Ensure the section is at the top */
+    section {
+        margin-top: 0;
+        padding-top: 0;  /* Remove any padding */
+    }
+
+    /* Optional: Set some basic padding for the content inside the section */
+    section#beginner {
+        padding: 10px;
+    }
+
+    /* Additional section content styling */
+    section h2, section h3, section p {
+        margin-top: 0; /* Remove any extra space from top of the headings or paragraphs */
+    }
+
+    /* Banner Style */
+    .banner {
+        margin: 0;
+        padding: 0;
+        display: block;
+        width: 100%;
+    }
+
+    /* Navigation Bar */
+    .nav-wrapper {
+        background-color: #333;
+        text-align: center;
+        padding: 10px 0;
+        margin: 0;
+    }
+
+    .nav-wrapper a {
+        color: white;
+        text-decoration: none;
+        margin: 0 15px;
+    }
+</style>
+
 <body>
     <!-- Navigation Bar -->
     <nav class="nav-wrapper">
@@ -41,7 +89,7 @@
     </nav>
 
     <!-- Beginer Resources Section -->
-    <section id="beginner">
+    <section id="beginner" style="padding: 10px; margin-top: 0;">
         <h2>Beginner Resources</h2>
         <p>Learn the basics of volleyball, including rules, positions, and fundamental skills.</p>
 

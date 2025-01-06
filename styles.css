@@ -730,7 +730,7 @@ p {
 }
 
 .resource-category h3 {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     margin: 10px 0;
 }
 
@@ -742,9 +742,9 @@ p {
 .resource-category:hover {
     transform: scale(1.05); /* Zoom effect on hover */
     box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.2);
+    background-color: #e9ecef; /* Change the background color of the entire box on hover */
 }
 
 .resource-category:hover .resource-content {
-    background-color: #e9ecef;
+    background-color: transparent; /* Keep the content background transparent to not override hover effect */
 }
-
