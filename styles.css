@@ -794,3 +794,55 @@ p {
         max-width: 50%; /* Reduce size further for small screens */
     }
 }
+
+header {
+    text-align: center;
+    padding: 40px; /* Increase padding for a more spacious look */
+    position: relative;
+    background: linear-gradient(to bottom, #ffffff, #f8f9fa); /* Subtle gradient background */
+    border-radius: 15px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Slightly larger shadow for emphasis */
+    margin: 30px auto;
+    max-width: 1000px; /* Wider container for the header */
+}
+
+header h1 {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    font-family: 'Arial Black', sans-serif;
+    letter-spacing: 2px; /* Adds space between letters for style */
+    text-transform: uppercase; /* Optional: Makes the text all caps */
+}
+
+header h2 {
+    font-size: 2rem;
+    font-style: italic;
+    margin-top: 0;
+    letter-spacing: 1px; /* Subtle spacing for consistency */
+}
+
+/* Image Styling */
+.header-icon {
+    width: 50px; /* Adjust image size */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.header-icon-small {
+    width: 30px; /* Smaller icon for subtitle */
+    height: auto; /* Maintain aspect ratio */
+}
+
+header {
+    animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
