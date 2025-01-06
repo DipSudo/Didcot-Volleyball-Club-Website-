@@ -823,17 +823,13 @@ header h2 {
 
 /* Image Styling */
 .header-icon {
-    width: 50px; /* Adjust image size */
-    height: auto; /* Maintain aspect ratio */
-}
-
-.header-icon-small {
-    width: 30px; /* Smaller icon for subtitle */
+    width: 60px; /* Adjust image size */
     height: auto; /* Maintain aspect ratio */
 }
 
 header {
-    animation: fadeIn 2s ease-in-out;
+    opacity: 0;
+    animation: fadeIn 2s ease-in-out forwards;
 }
 
 @keyframes fadeIn {

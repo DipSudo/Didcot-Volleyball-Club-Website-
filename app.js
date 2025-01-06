@@ -188,7 +188,3 @@ function resetAutoScroll() {
     clearInterval(autoScrollInterval);
     autoScrollInterval = setInterval(nextImage, 5000); // Restart auto-scroll with the desired interval
 }
-
-// Initially, set the first image as active
-updateLargeImage();
-
