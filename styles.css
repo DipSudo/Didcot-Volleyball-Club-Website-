@@ -611,19 +611,21 @@ p {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
     color: white;
     border: none;
-    padding: 15px 20px;
+    padding: 10px 15px; /* Adjust padding */
     font-size: 2.5em;
     cursor: pointer;
     z-index: 10;
-    border-radius: 50%;
     outline: none;
+    background-color: rgba(0, 0, 0, 0.7); /* Transparent background with 40% opacity */
+    transition: color 0.3s ease, transform 0.3s ease; /* Smooth transition for color and scale */
+    transform-origin: center; /* Ensure scaling occurs from the center */
 }
 
 #gallery .nav-button:hover {
-    background-color: rgba(0, 0, 0, 0.8);
+    color: #f3f3f0; /* Change icon color to gold on hover */
+    transform: scale(1.2); /* Enlarge without moving from location */
 }
 
 #gallery #prev-button {
@@ -633,7 +635,6 @@ p {
 #gallery #next-button {
     right: 10px;
 }
-
 
 .thumbnails {
     display: flex;
@@ -659,7 +660,7 @@ p {
 }
 
 .thumbnails img.active {
-    border-color: #333;
+    border-color: #f7f7f7;
     transform: scale(1.2);  /* Slightly larger active thumbnail */
 }
 
