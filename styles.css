@@ -142,14 +142,14 @@ header {
 header h1 {
     font-size: 50px;
     margin: 0 0 20px 0; /* Top: 0, Bottom: 20px */
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    /* text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); */
 }
 
 /* H2 Styling */
 header h2 {
     font-size: 30px;
     margin: 20px 0 30px 0; /* Top: 20px, Bottom: 15px */
-    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+    /* text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5); */
 }
 
 /* H3 Styling */
@@ -747,4 +747,50 @@ p {
 
 .resource-category:hover .resource-content {
     background-color: transparent; /* Keep the content background transparent to not override hover effect */
+}
+
+/* Hero Section */
+
+.hero-image {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.hero-img {
+    max-width: 80%; /* Adjust the percentage to make the image smaller */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    margin: 0 auto; /* Center the image horizontally */
+    display: block; /* Ensures proper centring with margin */
+}
+
+.btn-join:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.5rem;
+    }
+
+    header h2 {
+        font-size: 1.2rem;
+    }
+
+    .cta-section {
+        padding: 15px;
+    }
+
+    .btn-join {
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+
+    .hero-img {
+        max-width: 50%; /* Reduce size further for small screens */
+    }
 }
