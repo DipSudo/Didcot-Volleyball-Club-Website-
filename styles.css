@@ -32,7 +32,6 @@ h3 {
     text-align: center;
     padding: 20px;
 }
-
 /* Navigation Bar */
 .nav-wrapper {
     display: flex;                      /* Flexbox for layout */
@@ -55,15 +54,50 @@ h3 {
     color: white;
     text-decoration: none;
     margin: 0 15px;
-    font-size: 18px;
+    font-size: 22px; /* Increased font size here */
     padding: 10px 20px;
     display: inline-block;
 }
 
+/* Hover effect for Navigation Links */
 .nav-links a:hover {
     background-color: #575757;
     border-radius: 5px;
 }
+
+/* For Smaller Screens */
+@media (max-width: 768px) {
+    .nav-links a {
+        font-size: 18px; /* Smaller font size for mobile screens */
+    }
+
+    .nav-wrapper {
+        padding: 15px 10px; /* Adjust padding for better fit on small screens */
+    }
+
+    .nav-links {
+        justify-content: flex-start; /* Align links to the left on small screens */
+    }
+}
+
+.nav-wrapper a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 22px; /* Increased font size here as well */
+    padding: 10px 20px;
+    display: inline-block;
+    transition: color 0.3s;
+}
+
+/* Navigation Link Active/Focus State */
+.nav-wrapper a:hover,
+.nav-wrapper a.active {
+    color: #ddd; /* Subtle hover effect */
+    border-bottom: 2px solid #fff; /* Indicate active link */
+}
+
+
 /* Social Media Links */
 .social-media {
     display: flex;                      /* Flexbox for horizontal alignment */
@@ -87,24 +121,6 @@ h3 {
     color: #575757;                     /* Change icon color on hover */
 }
 
-
-
-
-.nav-wrapper a {
-    color: white;
-    text-decoration: none;
-    margin: 0 15px;
-    font-size: 18px;
-    padding: 10px 20px;
-    display: inline-block;
-    transition: color 0.3s;
-}
-
-.nav-wrapper a:hover,
-.nav-wrapper a.active {
-    color: #ddd; /* Subtle hover effect */
-    border-bottom: 2px solid #fff; /* Indicate active link */
-}
 
 /* Header Section (Hero Section) */
 header {
@@ -454,7 +470,7 @@ p {
     }
     
 
-/*Teams */
+/* Teams */
 #teams {
     text-align: center;
     padding: 20px;
@@ -462,79 +478,94 @@ p {
 
 .teams-container {
     display: flex;
-    justify-content: space-between;
-    gap: 20px;
+    justify-content: center; /* Centers the team cards horizontally */
+    align-items: stretch; /* Ensures all team cards have the same height */
+    gap: 50px; /* Larger gap between team cards */
     flex-wrap: wrap;
     margin: 0 auto;
+    max-width: 2000px; /* Increased max-width for a much larger container */
+    width: 100%; /* Full width to take up all available space */
 }
 
 .team-card {
     flex: 1;
-    max-width: 45%; /* Cards should take up nearly half the container width */
+    max-width: 100%; /* Cards will take up more space horizontally */
+    min-height: 500px; /* Set a minimum height for all cards */
     border: 2px solid #ccc;
-    padding: 15px;
-    margin-bottom: 20px;
+    padding: 25px; /* More padding for a larger feel */
+    margin-bottom: 30px; /* Larger margin between cards */
     text-align: center;
     box-sizing: border-box;
     transition: transform 0.3s, box-shadow 0.3s;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column; /* Makes the content of the card stack vertically */
+    justify-content: space-between; /* Ensures equal spacing between elements in the card */
 }
-
 .team-header {
     display: flex;
     justify-content: center; /* Centers content horizontally */
     align-items: center; /* Centers content vertically */
     margin-bottom: 10px; /* Reduced space between header and photo */
     width: 100%; /* Ensures header takes full width */
-}
-
-.team-header h3 {
-    margin: 0; /* Removes default margin */
-    margin-left: 180px; /* Space between the h3 and logo */
+    gap: 20px; /* Adds space between logo and text */
 }
 
 .team-logo {
-    width: 120px; /* Fixed size for logos */
-    height: 120px; /* Fixed size for logos */
-    object-fit: contain; /* Ensures logo keeps aspect ratio */
+    width: 150px; /* Larger size for the logo */
+    height: 150px;
+    object-fit: contain;
 }
 
-
 .team-info {
-    margin-left: 20px; /* Adds space between logo and info */
-    text-align: left; /* Align text to the left */
+    margin-top: 15px;
+    text-align: left;
 }
 
 .team-info p {
-    margin: 5px 0; /* Space between each line of information */
+    margin: 10px 0; /* Increased spacing between information */
 }
 
 .team-photo-container {
     position: relative;
-    width: 100%; /* Matches the width of the card */
-    height: 0; /* Height set to 0 to control aspect ratio */
-    padding-top: 75%; /* Adjust this value to change the aspect ratio */
-    overflow: hidden; /* Prevents content from spilling out */
+    width: 100%;
+    height: 0;
+    padding-top: 100%;   /* Maintain 4:3 aspect ratio */
+    overflow: hidden;
     display: flex;
-    justify-content: center; /* Horizontally centers the photo */
-    align-items: center; /* Vertically centers the photo */
-    background-color: #f0f0f0; /* Optional: Placeholder background */
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
 }
 
 .team-photo {
-    width: 80%; /* Reduce image width to 80% of the container width */
-    height: 80%; /* Reduce image height to 80% of the container height */
-    object-fit: contain; /* Ensures the image scales proportionally */
-    object-position: center; /* Ensures the image stays centered */
-    margin-top: 5px; /* Reduced margin between header and image */
+    width: 100%; /* Make image larger */
+    height: 100%; /* Increase image height to fill the space */
+    object-fit: contain;
+    object-position: center;
+    margin-top: 10px; /* Larger margin between header and image */
 }
 
 .team-info a {
-    color: #007bff; /* Blue color for the link */
-    text-decoration: none; /* Removes the underline */
+    color: #007bff;
+    text-decoration: none;
 }
 
 .team-info a:hover {
-    text-decoration: underline; /* Underline on hover */
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .teams-container {
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .team-card {
+        max-width: 90%; /* Make cards wider on smaller screens */
+        min-height: 400px; /* Adjust minimum height for smaller screens */
+    }
 }
 
 /*Gallery */
@@ -554,15 +585,7 @@ p {
     gap: 50px;  /* Increased gap between elements */
 }
 
-.carousel-image {
-    display: none; /* Hide all images initially */
-    width: 100%;
-    height: auto;
-}
 
-.carousel-image.active {
-    display: block; /* Only show the active image */
-}
 
 .large-image-container {
     position: relative;
