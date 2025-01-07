@@ -83,6 +83,18 @@ h3 {
     .nav-links {
         justify-content: flex-start; /* Align links to the left on small screens */
     }
+
+    /* Adjust layout for form inputs and buttons */
+    form input,
+    form textarea,
+    form button {
+        font-size: 1em; /* Adjust font size for smaller screens */
+    }
+
+    /* Adjust button sizes */
+    form button {
+        padding: 15px 30px; /* Smaller padding for mobile */
+    }
 }
 
 .nav-wrapper a {
@@ -174,6 +186,10 @@ section {
     text-align: center;
     transition: background-color 0.5s, color 0.5s;
 }
+body.secondary section {
+    justify-content: normal;
+}
+
 
 /* Consistent Section Styling */
 #home, #about, #volleyball, #gallery, #contact, #resources, #teams, #join{
@@ -842,3 +858,4 @@ header {
         transform: translateY(0);
     }
 }
+
