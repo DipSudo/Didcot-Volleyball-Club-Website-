@@ -279,7 +279,7 @@ form button:hover {
 /* Banner Container */
 .banner {
     width: 100%;                     /* Full width of the browser */
-    height: calc(50vw * 0.2);        /* Dynamically scale height based on viewport width */
+    height: calc(50vw * 0.15);        /* Dynamically scale height based on viewport width */
     position: relative;              /* Enable positioning for the image */
     overflow: hidden;                /* Prevent content overflow */
     background-color: #000;          /* Add a background colour for letterboxing */
@@ -287,6 +287,25 @@ form button:hover {
 
 /* Banner Image */
 .banner-img {
+    width: 100%;                     /* Ensure image spans full width */
+    height: 100%;                    /* Ensure image spans full height */
+    object-fit: contain;             /* Fit the entire image without cropping */
+    object-position: center;         /* Center the image within the container */
+    display: block;                  /* Eliminate inline spacing */
+}
+
+/* Footer Banner Container */
+
+.footer-banner {
+    width: 100%;                     /* Full width of the browser */
+    height: calc(50vw * 0.1);        /* Adjusted height to make it smaller */
+    position: relative;              /* Enable positioning for the image */
+    overflow: hidden;                /* Prevent content overflow */
+    background-color: #000;          /* Add a background colour for letterboxing */
+}
+
+/* Footer Banner Image */
+.footer-img {
     width: 100%;                     /* Ensure image spans full width */
     height: 100%;                    /* Ensure image spans full height */
     object-fit: contain;             /* Fit the entire image without cropping */
