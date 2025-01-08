@@ -249,14 +249,26 @@
         <p>If you have any questions, feel free to contact us using the form below.</p>
 
         <form id="contactForm" action="mailto:your-email@example.com" method="post" enctype="text/plain">
+            <div class="nameFields">
+                <div class="formField">
+                    <label for="firstName">First Name:</label>
+                    <input type="text" id="firstName" name="firstName" required>
+                </div>
+                <div class="formField">
+                    <label for="lastName">Last Name:</label>
+                    <input type="text" id="lastName" name="lastName" required>
+                </div>
+            </div>
+        
             <label for="email">Your Email:</label>
             <input type="email" id="email" name="email" required>
-    
+            
             <label for="message">Your Message:</label>
-            <textarea id="message" name="Your message" rows="5" required></textarea>
-    
+            <textarea id="message" name="message" rows="5" required></textarea>
+            
             <button type="submit">Send Message</button>
         </form>
+        
 
     </section>
 
