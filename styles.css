@@ -29,7 +29,19 @@ h2 {
 h3 {
     color: #333;
 }
+/* Global styles for all hyperlinks */
+a {
+    color: #0069d9; /* Blue color for all links */
+    text-decoration: none; /* Removes the default underline */
+    transition: color 0.3s ease; /* Smooth color change on hover */
+    font-weight: bold; /* Makes the link stand out more */
+}
 
+/* Hover effect for all links */
+a:hover {
+    color: #0056b3; /* Darker blue when hovered */
+    text-decoration: underline; /* Underline on hover for better visibility */
+}
 
 
 /* Main container styling */
@@ -515,12 +527,7 @@ p {
     max-width: 60%; /* Limit text content width */
 }
 
-#about .about-images img {
-    max-width: 90%; /* Increase image size */
-    height: auto; /* Maintain aspect ratio */
-    border-radius: 10px; /* Optional: Add rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Add shadow for style */
-}
+
 
 #about .about-images.left {
     justify-content: flex-start; /* Align the left image to the left */
@@ -539,7 +546,7 @@ p {
 #about .about-images img {
     max-width: 90%;
     height: auto;
-    border-radius: 10px;
+    border-radius: 50px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     will-change: transform; /* This optimizes the transform effect */
     image-rendering: smooth; /* Ensures smooth image rendering */
@@ -572,18 +579,57 @@ p {
     margin-top: 20px; /* Adjust the value as needed */
 }
 
+
+
 /* Styling for the Junior Announcement */
 .junior-announcement {
-    background-color: #fff3cd; /* Light yellow background for subtle emphasis */
+    background-color: #fff3cd; /* Light yellow background for emphasis */
     color: #856404; /* Dark yellow text for contrast */
-    font-size: 1rem; /* Slightly larger than normal text */
-    padding: 5px 10px; /* Adds a small amount of spacing */
-    border: 1px solid #fff3cd; /* Border to match the background */
-    border-radius: 4px; /* Rounded edges for a clean look */
-    display: inline-block; /* Makes it a small inline box */
-    margin-top: 10px; /* Adds spacing above */
+    font-size: 1.1rem; /* Slightly larger font size for better readability */
+    padding: 15px 20px; /* More spacious padding to give a clean feel */
+    border: 1px solid #ffeeba; /* Soft border that complements the background */
+    border-radius: 8px; /* Rounder corners for a more modern look */
+    display: inline-block; /* Keeps it as an inline box */
+    margin-top: 15px; /* Slightly increased margin for better spacing */
+    text-align: center; /* Centers the text */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for emphasis */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
+}
+
+/* Hover effect for link */
+.junior-announcement a {
+    color: #0069d9; /* Blue color for the link to stand out */
+    text-decoration: none; /* Removes underline */
+    font-weight: bold; /* Makes the link stand out more */
+    transition: color 0.3s ease; /* Smooth color transition on hover */
+}
+
+/* Hover effects for the announcement */
+.junior-announcement:hover {
+    background-color: #fff9db; /* Lighter yellow on hover */
+    transform: translateY(-3px); /* Slight lift on hover */
+}
+
+/* Hover effect for the link */
+.junior-announcement a:hover {
+    color: #0056b3; /* Darker blue on hover */
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    .session-card {
+        padding: 15px; /* Reduce padding on smaller screens */
     }
-    
+
+    h3 {
+        font-size: 1.2rem; /* Slightly smaller heading text on mobile */
+    }
+
+    .more-info-link {
+        font-size: 1rem; /* Adjust link font size for readability */
+    }
+}
+
 
 /* Teams */
 #teams {
@@ -630,6 +676,8 @@ p {
     width: 150px; /* Larger size for the logo */
     height: 150px;
     object-fit: contain;
+    border-radius: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .team-info {
@@ -661,15 +709,18 @@ p {
     object-fit: contain;
     object-position: center;
     margin-top: 10px; /* Larger margin between header and image */
+    border-radius: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
 }
 
-.team-info a {
-    color: #007bff;
-    text-decoration: none;
+#teams .team-logo:hover {
+    transform: scale(1.02); /* Slight zoom effect on hover */
 }
 
-.team-info a:hover {
-    text-decoration: underline;
+
+#teams .team-photo:hover {
+    transform: scale(1.02); /* Slight zoom effect on hover */
 }
 
 /* Responsive Design */
@@ -816,6 +867,8 @@ p {
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
     cursor: pointer; /* Makes the whole card look clickable */
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .resource-category a {
@@ -837,6 +890,7 @@ p {
     display: block;
     border-bottom: 2px solid #ddd;
     image-rendering: auto;
+    
 }
 
 .resource-category h3 {
