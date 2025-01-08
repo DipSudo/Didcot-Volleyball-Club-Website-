@@ -497,32 +497,71 @@ p {
 }
 
 /* About Section Styling */
-#about {
-    display: block; /* Default layout for simplicity */
-    text-align: center; /* Center-align text */
-    padding: 60px 20px; /* Add spacing around the section */
-}
-
-/* Center h2 and p */
-#about h2 {
-    margin-bottom: 10px; /* Space below the heading */
-    font-size: 2em; /* Adjust font size */
-}
-
-#about p {
-    margin-bottom: 20px; /* Space below the paragraph */
-    font-size: 1.2em; /* Adjust font size for readability */
-}
 
 #about {
-    display: flex; /* Use flexbox for alignment */
-    flex-direction: column; /* Stack items vertically */
-    align-items: center; /* Center items horizontally */
-    justify-content: center; /* Center items vertically */
-    text-align: center; /* Center-align text */
+    display: flex; /* Use flexbox for side-by-side layout */
+    flex-direction: row; /* Arrange items horizontally */
+    align-items: center; /* Vertically center the items */
+    justify-content: center; /* Center the content horizontally */
     padding: 60px 20px; /* Add spacing around the section */
     min-height: 100vh; /* Ensure it takes full viewport height */
     background-color: #f4f4f4; /* Optional: Set background for better visibility */
+    gap: 40px; /* Add space between the images and text */
+}
+
+#about .about-content {
+    text-align: center; /* Center-align text */
+    flex: 3; /* Make the text take up more space */
+    max-width: 60%; /* Limit text content width */
+}
+
+#about .about-images img {
+    max-width: 90%; /* Increase image size */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px; /* Optional: Add rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Add shadow for style */
+}
+
+#about .about-images.left {
+    justify-content: flex-start; /* Align the left image to the left */
+}
+
+#about .about-images.right {
+    justify-content: flex-end; /* Align the right image to the right */
+}
+#about .about-images {
+    flex: 3; /* Allow images to take up more space */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#about .about-images img {
+    max-width: 90%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    will-change: transform; /* This optimizes the transform effect */
+    image-rendering: smooth; /* Ensures smooth image rendering */
+}
+
+#about .about-images img:hover {
+    transform: scale(1.05); /* Slight zoom effect */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Shadow effect */
+}
+
+/* Mobile and smaller screen adjustments */
+@media (max-width: 768px) {
+    #about .about-images img {
+        max-width: 90%; /* Allow image to be slightly smaller on mobile for better fit */
+    }
+}
+
+/* Tablet and larger screen adjustments */
+@media (max-width: 1024px) {
+    #about .about-images img {
+        max-width: 95%; /* Adjust image size for tablet-sized screens */
+    }
 }
 
 h3 {

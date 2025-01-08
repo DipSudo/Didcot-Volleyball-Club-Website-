@@ -1,0 +1,45 @@
+
+#about {
+    display: flex; /* Use flexbox for side-by-side layout */
+    flex-direction: row; /* Arrange items horizontally */
+    align-items: center; /* Vertically center the items */
+    justify-content: center; /* Center the content horizontally */
+    padding: 60px 20px; /* Add spacing around the section */
+    min-height: 100vh; /* Ensure it takes full viewport height */
+    background-color: #f4f4f4; /* Optional: Set background for better visibility */
+    gap: 40px; /* Add space between the images and text */
+}
+
+#about .about-content {
+    text-align: center; /* Center-align text */
+    flex: 3; /* Make the text take up more space */
+    max-width: 60%; /* Limit text content width */
+}
+
+#about .about-images {
+    flex: 1; /* Allow the images to take up less space */
+    display: flex;
+    flex-direction: column; /* Stack images vertically */
+    gap: 20px; /* Add space between the images */
+}
+
+#about .about-images img {
+    max-width: 90%; /* Increase image size */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px; /* Optional: Add rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Add shadow for style */
+}
+
+#about .about-images.left {
+    justify-content: flex-start; /* Align the left image to the left */
+}
+
+#about .about-images.right {
+    justify-content: flex-end; /* Align the right image to the right */
+}
+#about .about-images {
+    flex: 3; /* Allow images to take up more space */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
