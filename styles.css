@@ -527,8 +527,6 @@ p {
     max-width: 60%; /* Limit text content width */
 }
 
-
-
 #about .about-images.left {
     justify-content: flex-start; /* Align the left image to the left */
 }
@@ -536,27 +534,29 @@ p {
 #about .about-images.right {
     justify-content: flex-end; /* Align the right image to the right */
 }
+
 #about .about-images {
-    flex: 3; /* Allow images to take up more space */
+    flex: 3; /* Allow equal space for left and right sections */
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    align-items: center;
+    gap: 20px; /* Spacing between images */
 }
 
 #about .about-images img {
-    max-width: 90%;
-    height: auto;
+    width: 90%; /* Ensures images are the same size */
+    aspect-ratio: 16/9; /* Forces the same aspect ratio for all images */
+    object-fit: cover; /* Ensures images fill the set dimensions without distortion */
     border-radius: 50px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    will-change: transform; /* This optimizes the transform effect */
+    will-change: transform; /* Optimizes the transform effect */
     image-rendering: smooth; /* Ensures smooth image rendering */
 }
 
 #about .about-images img:hover {
-    transform: scale(1.05); /* Slight zoom effect */
+    transform: scale(1.02); /* Slight zoom effect */
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Shadow effect */
 }
-
 /* Mobile and smaller screen adjustments */
 @media (max-width: 768px) {
     #about .about-images img {
