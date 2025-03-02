@@ -37,7 +37,6 @@
         <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
         <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
         <a href="https://www.youtube.com/@DidcotVolleyball" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
-        <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer"><i class="fab fa-tiktok"></i></a>
     </div>
         
     </nav>
@@ -58,7 +57,7 @@
         
         <div class="cta-section">
             <h2>Join Us Today!</h2>
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfZseZXavyTahyk3EyJMGKr8Cn2Nb1_Oqr7R9ojzu5hl7f-sw/viewform" 
+            <a href="#contact" 
                class="btn-join" 
                target="_blank" 
                rel="noopener noreferrer" 
@@ -273,8 +272,13 @@
         target="_blank" 
         rel="noopener noreferrer">Join Didcot Volleyball Club</a>
 
-        
+        <p class="privacy-notice">
+            By submitting this form, you agree to our 
+            <a href="privacy.html" target="_blank" rel="noopener noreferrer">Privacy Policy</a>, 
+            which explains how we handle your data.
+        </p>
         <p>If you have any questions, feel free to contact us using the form below.</p>
+
 
         <form id="contactForm" action="mailto:your-email@example.com" method="post" enctype="text/plain">
             <div class="nameFields">
@@ -288,14 +292,27 @@
                 </div>
             </div>
         
-            <label for="email">Your Email:</label>
-            <input type="email" id="email" name="email" required>
+            <div class="formField">
+                <label for="email">Your Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+        
+            <div class="formField">
+                <label for="message">Your Message:</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+        
+            <div class="checkboxField">
+                <input type="checkbox" id="privacyConsent" required>
+                <label for="privacyConsent">I agree to the 
+                    <a href="privacy.html" target="_blank">Privacy Policy</a>.
+                </label>
+            </div>
             
-            <label for="message">Your Message:</label>
-            <textarea id="message" name="message" rows="5" required></textarea>
             
             <button type="submit">Send Message</button>
         </form>
+        
         
 
     </section>

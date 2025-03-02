@@ -445,13 +445,23 @@ p {
     display: flex;
     flex-direction: column;
     gap: 25px; /* Space between each section */
-    max-width: 1000px;
+    max-width: 90%;
+    width: 1000px; /* Ensures it doesn’t exceed this width */
     margin: 50px auto;
     padding: 30px;
-    background: linear-gradient(145deg, #ffffff, #f0f0f0);
+    background: linear-gradient(145deg, #ffffff, #f7f7f7);
     border-radius: 15px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
     font-family: 'Arial', sans-serif;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Make form responsive on smaller screens */
+@media (max-width: 600px) {
+    #contactForm {
+        padding: 20px;
+        gap: 15px;
+    }
 }
 
 .nameFields {
