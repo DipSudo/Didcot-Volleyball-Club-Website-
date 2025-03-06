@@ -482,7 +482,8 @@ p {
     display: block; /* Ensure label appears above input */
 }
 
-#contactForm input,
+/* Apply styles only to non-checkbox inputs */
+#contactForm input:not([type="checkbox"]),
 #contactForm textarea {
     width: 100%; /* Full width within their containers */
     padding: 15px;
@@ -517,6 +518,27 @@ p {
     transform: translateY(-4px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
+
+/* Specific styling for the checkbox */
+.checkboxField {
+    display: flex;
+    justify-content: center;  /* Centers the content horizontally */
+    align-items: center;      /* Centers the content vertically */
+    gap: 10px; /* Space between checkbox and label */
+    margin-top: 10px;
+}
+
+/* Reset checkbox styles */
+.checkboxField input[type="checkbox"] {
+    all: unset; /* Removes all inherited styles */
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    appearance: auto; /* Restores default checkbox styling */
+    border: 2px solid #333; /* Border for the checkbox */
+    border-radius: 4px; /* Optional: rounded corners */
+}
+
 
 /* About Section Styling */
 
