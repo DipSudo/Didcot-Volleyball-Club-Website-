@@ -1039,3 +1039,31 @@ header {
     }
 }
 
+/* Equipment Section */   
+.equipment-container {
+    display: flex; /* Aligns items horizontally (left to right) */
+    gap: 20px; /* Adds space between boxes */
+    justify-content: flex-start; /* Aligns the boxes to the left */
+    flex-wrap: nowrap; /* Ensures the boxes stay in one line (no wrapping) */
+}
+
+/* Style for each box containing the image */
+.equipment-item {
+    width: 150px; /* Width of the box */
+    height: 150px; /* Height of the box */
+    display: flex;
+    align-items: center; /* Centers the image vertically */
+    justify-content: center; /* Centers the image horizontally */
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Style for the product image */
+.product-image {
+    width: 80%; /* Adjust image size inside the box */
+    height: auto;
+}
+.product-image:hover {
+    transform: scale(1.05);
+}
