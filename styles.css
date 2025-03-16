@@ -1040,30 +1040,40 @@ header {
 }
 
 /* Equipment Section */   
+/* Container for the volleyball boxes */
 .equipment-container {
     display: flex; /* Aligns items horizontally (left to right) */
     gap: 20px; /* Adds space between boxes */
     justify-content: flex-start; /* Aligns the boxes to the left */
-    flex-wrap: nowrap; /* Ensures the boxes stay in one line (no wrapping) */
+    flex-wrap: wrap; /* Allow the boxes to wrap in case the screen is narrow */
 }
 
 /* Style for each box containing the image */
 .equipment-item {
-    width: 150px; /* Width of the box */
-    height: 150px; /* Height of the box */
+    width: 250px; /* Width of the box */
+    height: 250px; /* Increased height to accommodate image + text */
     display: flex;
-    align-items: center; /* Centers the image vertically */
-    justify-content: center; /* Centers the image horizontally */
+    flex-direction: column; /* Align text and image vertically */
+    align-items: center; /* Centers the image and text horizontally */
+    justify-content: space-between; /* Distributes space between image and text */
     background: #fff;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    overflow: hidden; /* Ensures content doesn't overflow */
 }
 
 /* Style for the product image */
 .product-image {
-    width: 80%; /* Adjust image size inside the box */
-    height: auto;
+    width: 100%; /* Make the image take full width of the box */
+    height: 70%; /* Adjust height of the image */
+    object-fit: cover; /* Keeps the image's aspect ratio intact while covering the box */
+    object-position: center; /* Centers the image */
+    transition: transform 0.1s ease-in-out;
 }
+
+/* Hover effect on image */
 .product-image:hover {
-    transform: scale(1.05);
+    transform: scale(1.05); /* Slight zoom effect on hover */
 }
+
