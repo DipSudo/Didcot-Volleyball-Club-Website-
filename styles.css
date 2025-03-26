@@ -545,8 +545,8 @@ p {
 #about {
     display: flex; /* Use flexbox for side-by-side layout */
     flex-direction: row; /* Arrange items horizontally */
-    align-items: center; /* Vertically center the items */
-    justify-content: center; /* Center the content horizontally */
+    align-items: left; /* Vertically center the items */
+    justify-content: left; /* Center the content horizontally */
     padding: 60px 20px; /* Add spacing around the section */
     min-height: 100vh; /* Ensure it takes full viewport height */
     background-color: #f4f4f4; /* Optional: Set background for better visibility */
@@ -559,14 +559,6 @@ p {
     max-width: 60%; /* Limit text content width */
 }
 
-#about .about-images.left {
-    justify-content: flex-start; /* Align the left image to the left */
-}
-
-#about .about-images.right {
-    justify-content: flex-end; /* Align the right image to the right */
-}
-
 #about .about-images {
     flex: 3; /* Allow equal space for left and right sections */
     display: flex;
@@ -576,7 +568,7 @@ p {
 }
 
 #about .about-images img {
-    width: 90%; /* Ensures images are the same size */
+    width: 80%; /* Ensures images are the same size */
     aspect-ratio: 16/9; /* Forces the same aspect ratio for all images */
     object-fit: cover; /* Ensures images fill the set dimensions without distortion */
     border-radius: 50px;
