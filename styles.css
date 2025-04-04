@@ -89,7 +89,7 @@ a:hover {
 }
 
 /* For Smaller Screens */
-@media (max-width: 768px) {
+@media (max-width: 600px) {
     .nav-links a {
         font-size: 18px; /* Smaller font size for mobile screens */
     }
@@ -574,10 +574,10 @@ p {
 }
 
 #about .about-images img {
-    width: 80%; /* Ensures images are the same size */
+    width: 70%; /* Ensures images are the same size */
     aspect-ratio: 16/9; /* Forces the same aspect ratio for all images */
     object-fit: cover; /* Ensures images fill the set dimensions without distortion */
-    border-radius: 50px;
+    border-radius: 10px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     will-change: transform; /* Optimizes the transform effect */
     image-rendering: smooth; /* Ensures smooth image rendering */
@@ -588,14 +588,14 @@ p {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Shadow effect */
 }
 /* Mobile and smaller screen adjustments */
-@media (max-width: 768px) {
+@media (max-width: 600px) {
     #about .about-images img {
         max-width: 90%; /* Allow image to be slightly smaller on mobile for better fit */
     }
 }
 
 /* Tablet and larger screen adjustments */
-@media (max-width: 1024px) {
+@media (max-width: 600px) {
     #about .about-images img {
         max-width: 95%; /* Adjust image size for tablet-sized screens */
     }
@@ -646,7 +646,7 @@ p {
 }
 
 /* Responsive design for smaller screens */
-@media (max-width: 768px) {
+@media (max-width: 600px) {
     .session-card {
         padding: 15px; /* Reduce padding on smaller screens */
     }
@@ -754,7 +754,7 @@ p {
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
+@media (max-width: 600px) {
     .teams-container {
         flex-direction: column;
         gap: 25px;
@@ -966,7 +966,7 @@ p {
 
 
 /* Responsive Design */
-@media (max-width: 768px) {
+@media (max-width: 600px) {
     header h1 {
         font-size: 2.5rem;
     }
