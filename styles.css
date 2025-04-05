@@ -53,7 +53,7 @@ a:hover {
 /* Main container styling */
 .main {
     text-align: center;
-    padding: 20px;
+    padding: 0px;
 }
 /* Navigation Bar */
 .nav-wrapper {
@@ -86,33 +86,6 @@ a:hover {
 .nav-links a:hover {
     background-color: #575757;
     border-radius: 5px;
-}
-
-/* For Smaller Screens */
-@media (max-width: 600px) {
-    .nav-links a {
-        font-size: 18px; /* Smaller font size for mobile screens */
-    }
-
-    .nav-wrapper {
-        padding: 15px 10px; /* Adjust padding for better fit on small screens */
-    }
-
-    .nav-links {
-        justify-content: flex-start; /* Align links to the left on small screens */
-    }
-
-    /* Adjust layout for form inputs and buttons */
-    form input,
-    form textarea,
-    form button {
-        font-size: 1em; /* Adjust font size for smaller screens */
-    }
-
-    /* Adjust button sizes */
-    form button {
-        padding: 15px 30px; /* Smaller padding for mobile */
-    }
 }
 
 .nav-wrapper a {
@@ -462,14 +435,6 @@ p {
     transition: all 0.3s ease-in-out;
 }
 
-/* Make form responsive on smaller screens */
-@media (max-width: 600px) {
-    #contactForm {
-        padding: 20px;
-        gap: 15px;
-    }
-}
-
 .nameFields {
     display: flex;
     justify-content: space-between; /* Align First Name and Last Name side by side */
@@ -586,21 +551,10 @@ p {
 #about .about-images img:hover {
     transform: scale(1.02); /* Slight zoom effect */
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Shadow effect */
-}
-/* Mobile and smaller screen adjustments */
-@media (max-width: 600px) {
-    #about .about-images img {
-        max-width: 90%; /* Allow image to be slightly smaller on mobile for better fit */
-    }
+
 }
 
 /* Tablet and larger screen adjustments */
-@media (max-width: 600px) {
-    #about .about-images img {
-        max-width: 95%; /* Adjust image size for tablet-sized screens */
-    }
-}
-
 h3 {
     margin-top: 20px; /* Adjust the value as needed */
 }
@@ -645,20 +599,7 @@ p {
     color: #0056b3; /* Darker blue on hover */
 }
 
-/* Responsive design for smaller screens */
-@media (max-width: 600px) {
-    .session-card {
-        padding: 15px; /* Reduce padding on smaller screens */
-    }
 
-    h3 {
-        font-size: 1.2rem; /* Slightly smaller heading text on mobile */
-    }
-
-    .more-info-link {
-        font-size: 1rem; /* Adjust link font size for readability */
-    }
-}
 
 
 /* Teams */
@@ -753,18 +694,7 @@ p {
     transform: scale(1.02); /* Slight zoom effect on hover */
 }
 
-/* Responsive Design */
-@media (max-width: 600px) {
-    .teams-container {
-        flex-direction: column;
-        gap: 25px;
-    }
 
-    .team-card {
-        max-width: 90%; /* Make cards wider on smaller screens */
-        min-height: 400px; /* Adjust minimum height for smaller screens */
-    }
-}
 
 /*Gallery */
 
@@ -965,29 +895,6 @@ p {
 }
 
 
-/* Responsive Design */
-@media (max-width: 600px) {
-    header h1 {
-        font-size: 2.5rem;
-    }
-
-    header h2 {
-        font-size: 1.2rem;
-    }
-
-    .cta-section {
-        padding: 15px;
-    }
-
-    .btn-join {
-        padding: 10px 20px;
-        font-size: 1rem;
-    }
-
-    .hero-img {
-        max-width: 50%; /* Reduce size further for small screens */
-    }
-}
 
 header {
     text-align: center;
@@ -1099,45 +1006,12 @@ figcaption {
     animation: fadeIn 0.6s ease-in-out forwards;
 }
 
-/* Example of ensuring images/videos scale correctly */
-/* Responsive Font Scaling */
-.text {
-    font-size: calc(1vw + 1vh); /* Scales proportionally */
-    text-align: center;
-}
+/* For Smaller Screens */
+@media (max-width: 600px) {
 
-/* Example of ensuring images/videos scale correctly */
-img, video {
-    max-width: 100%;
-    height: auto;
-    border-radius: 5px;
-}
-
-@media (max-aspect-ratio: 16/9) {
-    .container {
-        width: 100vmin;
-        height: auto;
-    }
-}
-
-@media (min-aspect-ratio: 16/9) {
-    .container {
-        height: 100vmin;
-        width: auto;
-    }
-}
-
-/* Mobile-friendly adjustments */
-@media (max-width: 768px) {
-    .container {
-        width: 95vmin;
-        padding: 4vmin;
-        border-radius: 5px;
-    }
-    .text {
-        font-size: calc(2vw + 2vh); /* Larger text for mobile */
-    }
-    body {
-        overflow: auto; /* Allow scrolling on mobile */
+    .main {
+        text-align: center;
+        padding: 0px;
+        width: 100%;
     }
 }
