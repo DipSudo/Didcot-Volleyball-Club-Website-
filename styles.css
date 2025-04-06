@@ -33,6 +33,10 @@ html {
     
 }
 
+section {
+    scroll-margin-top: 80px; /* offset to avoid being hidden under fixed nav */
+  }
+
 /* Basic styles for layout and aesthetics */
 body {
     font-family: Arial, sans-serif;
@@ -114,16 +118,18 @@ a:hover {
   }
 
 /* Removed redundant rule */
-  
 /* Navigation Bar */
 .nav-wrapper {
     display: flex;                      /* Flexbox for layout */
     justify-content: space-between;     /* Space between nav links and social media */
     align-items: center;                /* Vertically align items */
-    background-color: #333;
+    background-color: white;
     padding: 10px 20px;
     width: 100%;
     box-sizing: border-box;             /* Ensure padding does not affect width */
+    position: fixed;
+    top: 0;
+    z-index: 1000;
 }
 
 /* Center the Nav Links */
@@ -137,7 +143,7 @@ a:hover {
     color: white;
     text-decoration: none;
     margin: 0 15px;
-    font-size: 22px; /* Increased font size here */
+    font-size: 22px; /* Increased font size */
     padding: 10px 20px;
     display: inline-block;
 }
@@ -148,11 +154,12 @@ a:hover {
     border-radius: 5px;
 }
 
+/* General Nav Wrapper Styles for Links */
 .nav-wrapper a {
     color: white;
     text-decoration: none;
     margin: 0 15px;
-    font-size: 22px; /* Increased font size here as well */
+    font-size: 22px; /* Increased font size */
     padding: 10px 20px;
     display: inline-block;
     transition: color 0.3s;
@@ -164,6 +171,39 @@ a:hover {
     color: #ddd; /* Subtle hover effect */
     border-bottom: 2px solid #fff; /* Indicate active link */
 }
+
+
+
+/* Mobile Menu Toggle (Hamburger Menu) */
+@media (max-width: 768px) {
+    .nav-wrapper {
+        position: relative;
+    }
+    
+    .nav-links {
+        display: none; /* Hide nav links by default on mobile */
+        width: 100%;
+        flex-direction: column; /* Stack vertically */
+    }
+    
+    .nav-links.show {
+        display: flex; /* Show nav links when 'show' class is added */
+    }
+
+    /* Hamburger Icon Styles */
+    .hamburger {
+        display: block; /* Show hamburger icon on mobile */
+        cursor: pointer;
+        font-size: 30px;
+        color: white;
+    }
+
+    /* Adjust the styling of the active hamburger icon */
+    .hamburger.active {
+        color: #ddd; /* Change hamburger icon color when active */
+    }
+}
+
 @media (max-width: 600px) {
     .nav-wrapper {
         flex-wrap: wrap; /* Keeps items on same line if there's space */
@@ -977,10 +1017,6 @@ p {
 
 /*Gallery */
 
-/*Gallery */
-/* Use the same CSS for the gallery grid */
-
-
 
 #gallery {
     padding: 20px;
@@ -991,8 +1027,6 @@ p {
     align-items: center;
     gap: 50px;  /* Increased gap between elements */
 }
-
-
 
 .large-image-container {
     position: relative;
@@ -1088,76 +1122,53 @@ p {
     outline: none;
 }
 
+
 @media (max-width: 768px) {
-    .carousel {
-        gap: 15px; /* Reduced gap between carousel elements */
+    #gallery {
+        padding: 15px;
     }
 
     .large-image-container {
-        max-width: 100%;  /* Ensure it fits on small screens */
-        aspect-ratio: 16/9; /* Keep aspect ratio */
+        aspect-ratio: 16 / 9;
+        max-height: 50vh;
     }
 
-    .large-image-container img {
-        object-fit: contain; /* Fit image without distortion */
-        max-height: 60vh; /* Limit height for better display */
-    }
-
-    /* Navigation Button */
-    #gallery .nav-button {
-        font-size: 1.8em;  /* Smaller navigation buttons */
-        padding: 8px 12px;
-    }
-
-    /* Thumbnail images */
     .thumbnails img {
-        width: 70px;
-        height: 55px;
+        width: 65px;
+        height: 50px;
     }
 
-    .thumbnails img.active {
-        transform: scale(1.05);
-    }
-
+    .nav-button,
     .thumbnail-nav-button {
-        font-size: 2em; /* Smaller thumbnail nav buttons */
-        padding: 10px;
+        font-size: 1.3em;
+        padding: 5px 10px;
     }
 }
 
+/* Phones */
 @media (max-width: 480px) {
-    .carousel {
-        gap: 10px; /* Further reduced gap between carousel elements */
+    #gallery {
+        padding: 10px;
     }
 
     .large-image-container {
-        max-width: 100%;  /* Ensure full-width layout */
+        aspect-ratio: 16 / 9;
+        max-height: 45vh;
     }
 
-    .large-image-container img {
-        object-fit: contain;
-        max-height: 50vh; /* Reduce max height on smaller screens */
+    .thumbnails {
+        gap: 8px;
     }
 
-    /* Navigation Button */
-    #gallery .nav-button {
-        font-size: 1.6em;  /* Smaller nav buttons */
-        padding: 6px 10px;
-    }
-
-    /* Thumbnail images */
     .thumbnails img {
-        width: 60px;
-        height: 45px;
+        width: 55px;
+        height: 40px;
     }
 
-    .thumbnails img.active {
-        transform: scale(1.05);
-    }
-
+    .nav-button,
     .thumbnail-nav-button {
-        font-size: 1.8em; /* Smaller thumbnail nav buttons */
-        padding: 8px;
+        font-size: 1.2em;
+        padding: 4px 8px;
     }
 }
 
