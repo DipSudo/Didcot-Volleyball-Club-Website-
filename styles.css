@@ -1123,52 +1123,71 @@ p {
 }
 
 
+
+/* For Tablets and Smaller Screens */
 @media (max-width: 768px) {
     #gallery {
         padding: 15px;
     }
 
+    .carousel {
+        gap: 30px;  /* Reduced gap for smaller screens */
+    }
+
     .large-image-container {
-        aspect-ratio: 16 / 9;
-        max-height: 50vh;
+        max-width: 90%; /* Ensures image is not too large on tablet */
+        aspect-ratio: 16/9; /* Maintain the aspect ratio */
+    }
+
+    .large-image-container img {
+        object-fit: cover;
+        height: auto;
     }
 
     .thumbnails img {
-        width: 65px;
-        height: 50px;
+        width: 90px;  /* Smaller thumbnail size */
+        height: 70px;
     }
 
-    .nav-button,
+    .nav-button {
+        font-size: 2em;
+        padding: 8px 12px;
+    }
+
     .thumbnail-nav-button {
-        font-size: 1.3em;
-        padding: 5px 10px;
+        font-size: 2em;
+        padding: 12px;
     }
 }
 
-/* Phones */
+/* For Mobile Screens */
 @media (max-width: 480px) {
     #gallery {
         padding: 10px;
     }
 
-    .large-image-container {
-        aspect-ratio: 16 / 9;
-        max-height: 45vh;
+    .carousel {
+        gap: 20px;  /* Smaller gap for tighter layout */
     }
 
-    .thumbnails {
-        gap: 8px;
+    .large-image-container {
+        max-width: 100%; /* Makes sure image fills the screen width */
+        aspect-ratio: 16/9; /* Maintain the aspect ratio */
     }
 
     .thumbnails img {
-        width: 55px;
-        height: 40px;
+        width: 70px;  /* Even smaller thumbnails for mobile */
+        height: 50px;
     }
 
-    .nav-button,
+    .nav-button {
+        font-size: 1.8em;
+        padding: 6px 10px;
+    }
+
     .thumbnail-nav-button {
-        font-size: 1.2em;
-        padding: 4px 8px;
+        font-size: 1.8em;
+        padding: 10px;
     }
 }
 
