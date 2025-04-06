@@ -116,7 +116,48 @@ a:hover {
       padding: 0 10px; /* Small horizontal padding on mobile */
     }
   }
+  
+/* Responsive tweaks */
+@media screen and (max-width: 768px) {
+    #home header h1 {
+        font-size: 2em;
+    }
 
+    #home header h2 {
+        font-size: 1.2em;
+    }
+
+    .header-icon {
+        width: 40px;
+    }
+
+    .btn-join {
+        font-size: 1em;
+        padding: 10px 20px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #home {
+        padding: 15px;
+    }
+
+    #home header h1 {
+        font-size: 1.6em;
+    }
+
+    .header-icon {
+        width: 30px;
+    }
+
+    .hero-img {
+        max-width: 100%;
+    }
+
+    .cta-section h2 {
+        font-size: 1.3em;
+    }
+}
 /* Removed redundant rule */
 /* Navigation Bar */
 .nav-wrapper {
@@ -130,6 +171,7 @@ a:hover {
     position: fixed;
     top: 0;
     z-index: 1000;
+    
 }
 
 /* Center the Nav Links */
@@ -163,15 +205,19 @@ a:hover {
     padding: 10px 20px;
     display: inline-block;
     transition: color 0.3s;
+    padding: 10px;
+    text-decoration: none;
+    color: #666;
+    transition: all 0.3s ease;
 }
 
 /* Navigation Link Active/Focus State */
 .nav-wrapper a:hover,
 .nav-wrapper a.active {
-    color: #ddd; /* Subtle hover effect */
-    border-bottom: 2px solid #fff; /* Indicate active link */
-}
-
+    color: #fff;
+    background-color: #007BFF;
+    border-radius: 5px;
+  }
 
 
 /* Mobile Menu Toggle (Hamburger Menu) */
@@ -438,12 +484,6 @@ form button {
     transition: background-color 0.3s, transform 0.2s;
 }
 
-/* Button Hover Effect */
-form button:hover {
-    background-color: #575757;
-    transform: translateY(-2px);      /* Subtle hover effect */
-}
-
 
 .nav-wrapper a.active {
     color: #fff;
@@ -487,6 +527,19 @@ form button:hover {
     display: block;                  /* Eliminate inline spacing */
 }
 
+@media (max-width: 768px) {
+    .banner {
+      height: calc(100vw * 0.1); /* Slightly taller on smaller screens for clarity */
+    }   
+    .footer-banner {
+      height: calc(100vw * 0.1); /* Slightly taller on smaller screens for clarity */
+    }
+  
+    .banner-img,
+    .footer-img {
+      object-fit: cover; /* Optional: 'cover' fills space better on tiny screens */
+    }
+  }
 
 @media (max-width: 600px) {
     .banner {

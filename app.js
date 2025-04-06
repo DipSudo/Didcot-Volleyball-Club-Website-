@@ -1,156 +1,109 @@
-
-document.querySelectorAll('.nav-wrapper a').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        // Only prevent default if the link is an internal anchor link (i.e., starts with #)
-        if (this.getAttribute('href').startsWith('#')) {
-            e.preventDefault();  // Prevents default link behavior
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'  // Smooth scroll to the section
-            });
-        }
-    });
-});
-
-
-const form = document.querySelector("form");
-
-form.addEventListener("submit", (e) => {
-    const name = form.querySelector("input[name='name']").value.trim();
-    const email = form.querySelector("input[name='email']").value.trim();
-    const message = form.querySelector("textarea[name='message']").value.trim();
-
-    if (!name || !email || !message) {
-        e.preventDefault();
-        alert("Please fill out all fields.");
-    } else if (!/\S+@\S+\.\S+/.test(email)) {
-        e.preventDefault();
-        alert("Please enter a valid email address.");
-    }
-});
-
-// JavaScript to add active class on click
-const navLinks = document.querySelectorAll('.nav-links a');
-
-navLinks.forEach(link => {
-    link.addEventListener('click', function() {
-        navLinks.forEach(link => link.classList.remove('active')); // Remove 'active' from all links
-        this.classList.add('active'); // Add 'active' to the clicked link
-    });
-});
-
 document.addEventListener("DOMContentLoaded", () => {
+
+
+    // Add scroll event listener and call highlightNav on page load
+    window.addEventListener("scroll", highlightNav);
+    highlightNav(); // Initial highlight on page load
+
+    // === Contact Form Validation ===
+    const form = document.querySelector("form");
+    if (form) {
+        form.addEventListener("submit", (e) => {
+            const name = form.querySelector("input[name='name']").value.trim();
+            const email = form.querySelector("input[name='email']").value.trim();
+            const message = form.querySelector("textarea[name='message']").value.trim();
+
+            console.log(`Form values: Name=${name}, Email=${email}, Message=${message}`);
+            
+            if (!name || !email || !message) {
+                e.preventDefault();
+                alert("Please fill out all fields.");
+            } else if (!/\S+@\S+\.\S+/.test(email)) {
+                e.preventDefault();
+                alert("Please enter a valid email address.");
+            }
+        });
+    } else {
+        console.log("Form not found!");
+    }
+
+    // === Image Carousel Logic ===
     const largeImage = document.getElementById("large-image");
     const thumbnails = document.querySelectorAll("#gallery .thumbnail");
-    const prevButton = document.querySelector("#gallery #prev-button");
-    const nextButton = document.querySelector("#gallery #next-button");
-    const thumbnailPrev = document.querySelector("#gallery .thumbnail-prev-button");
-    const thumbnailNext = document.querySelector("#gallery .thumbnail-next-button");
-    const thumbnailsContainer = document.querySelector("#gallery .thumbnails-container");
+    const prevButton = document.getElementById("prev-button");
+    const nextButton = document.getElementById("next-button");
+    const thumbnailPrev = document.querySelector(".thumbnail-prev-button");
+    const thumbnailNext = document.querySelector(".thumbnail-next-button");
+    const thumbnailsContainer = document.querySelector(".thumbnails-container");
 
+    if (!largeImage) console.log("Large image not found!");
+    if (thumbnails.length === 0) console.log("Thumbnails not found!");
+    
     let currentIndex = 0;
 
-    // Update large image display
-    const updateLargeImage = (index) => {
+    const updateLargeImage = () => {
         thumbnails.forEach((thumb, i) => {
-            thumb.classList.toggle("active", i === index);
+            thumb.classList.toggle("active", i === currentIndex);
         });
-        largeImage.src = thumbnails[index].src;
-        largeImage.alt = thumbnails[index].alt;
+        largeImage.src = thumbnails[currentIndex]?.src;
+        largeImage.alt = thumbnails[currentIndex]?.alt;
+        console.log(`Updated large image to: ${thumbnails[currentIndex]?.src}`);
     };
 
-    // Large image navigation
-    prevButton.addEventListener("click", () => {
-        currentIndex = (currentIndex - 1 + thumbnails.length) % thumbnails.length;
-        updateLargeImage(currentIndex);
-    });
-
-    nextButton.addEventListener("click", () => {
+    const nextImage = () => {
         currentIndex = (currentIndex + 1) % thumbnails.length;
-        updateLargeImage(currentIndex);
-    });
+        updateLargeImage();
+    };
 
-    // Thumbnail navigation
+    const prevImage = () => {
+        currentIndex = (currentIndex - 1 + thumbnails.length) % thumbnails.length;
+        updateLargeImage();
+    };
+
+    // Check if the buttons are found
+    if (nextButton && prevButton) {
+        nextButton.addEventListener("click", () => {
+            nextImage();
+            resetAutoScroll();
+        });
+
+        prevButton.addEventListener("click", () => {
+            prevImage();
+            resetAutoScroll();
+        });
+    } else {
+        console.log("Next/Previous buttons not found!");
+    }
+
+    // Event listeners for thumbnail navigation
     thumbnails.forEach((thumb, index) => {
         thumb.addEventListener("click", () => {
             currentIndex = index;
-            updateLargeImage(currentIndex);
+            updateLargeImage();
+            resetAutoScroll();
         });
     });
 
-    // Thumbnail scroll navigation
-    thumbnailPrev.addEventListener("click", () => {
-        thumbnailsContainer.scrollLeft -= 100;
-    });
+    // Thumbnail scroll navigation (left/right arrows)
+    if (thumbnailPrev && thumbnailNext) {
+        thumbnailPrev.addEventListener("click", () => {
+            thumbnailsContainer.scrollLeft -= 100;
+        });
 
-    thumbnailNext.addEventListener("click", () => {
-        thumbnailsContainer.scrollLeft += 100;
-    });
+        thumbnailNext.addEventListener("click", () => {
+            thumbnailsContainer.scrollLeft += 100;
+        });
+    } else {
+        console.log("Thumbnail navigation buttons not found!");
+    }
 
-    // Initialize with the first image active
-    updateLargeImage(currentIndex);
+    // Auto-scroll functionality for carousel
+    let autoScrollInterval = setInterval(nextImage, 5000); // Adjust interval as needed
+
+    const resetAutoScroll = () => {
+        clearInterval(autoScrollInterval);
+        autoScrollInterval = setInterval(nextImage, 5000); // Reset auto-scroll with interval
+    };
+
+    updateLargeImage(); // Initialize first image
 });
-let currentIndex = 0;
-const images = document.querySelectorAll(".carousel .large-image-container img"); // Large images
-const thumbnails = document.querySelectorAll(".carousel .thumbnails .thumbnail"); // Thumbnails
-
-// Function to update the large image based on the current index
-function updateLargeImage() {
-    const largeImage = document.getElementById("large-image");
-    largeImage.src = thumbnails[currentIndex].src; // Change the large image to the selected thumbnail image
-    thumbnails.forEach((thumbnail) => thumbnail.classList.remove("active")); // Remove active class from all thumbnails
-    thumbnails[currentIndex].classList.add("active"); // Add active class to the selected thumbnail
-}
-
-// Function to go to the next image
-function nextImage() {
-    currentIndex = (currentIndex + 1) % thumbnails.length; // Move to the next thumbnail
-    updateLargeImage();
-}
-
-// Function to go to the previous image
-function prevImage() {
-    currentIndex = (currentIndex - 1 + thumbnails.length) % thumbnails.length; // Move to the previous thumbnail
-    updateLargeImage();
-}
-
-// Event listeners for the previous and next buttons for the main image
-document.getElementById("next-button").addEventListener("click", function () {
-    nextImage();
-    resetAutoScroll(); // Reset auto-scroll after manual interaction
-});
-
-document.getElementById("prev-button").addEventListener("click", function () {
-    prevImage();
-    resetAutoScroll(); // Reset auto-scroll after manual interaction
-});
-
-// Event listeners for the thumbnail images
-thumbnails.forEach((thumbnail, index) => {
-    thumbnail.addEventListener("click", function () {
-        currentIndex = index; // Set the current index to the clicked thumbnail
-        updateLargeImage();
-        resetAutoScroll(); // Reset auto-scroll after manual interaction
-    });
-});
-
-// Thumbnail navigation buttons
-document.querySelector(".thumbnail-prev-button").addEventListener("click", function () {
-    const thumbnailsContainer = document.querySelector(".thumbnails-container");
-    const firstThumbnail = thumbnailsContainer.querySelector(".thumbnail");
-    thumbnailsContainer.appendChild(firstThumbnail); // Move the first thumbnail to the end
-});
-
-document.querySelector(".thumbnail-next-button").addEventListener("click", function () {
-    const thumbnailsContainer = document.querySelector(".thumbnails-container");
-    const lastThumbnail = thumbnailsContainer.querySelector(".thumbnail:last-child");
-    thumbnailsContainer.insertBefore(lastThumbnail, thumbnailsContainer.firstChild); // Move the last thumbnail to the beginning
-});
-
-// Auto-scroll for main image
-let autoScrollInterval = setInterval(nextImage, 5000); // Change 5000 to your desired interval (in milliseconds)
-
-// Function to reset the auto-scroll interval
-function resetAutoScroll() {
-    clearInterval(autoScrollInterval);
-    autoScrollInterval = setInterval(nextImage, 5000); // Restart auto-scroll with the desired interval
-}
