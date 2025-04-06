@@ -5,6 +5,23 @@
     box-sizing: border-box;
 }
 
+/* Set global font and smooth scrolling */
+html, body {
+    font-family: Arial, sans-serif;
+    scroll-behavior: smooth;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 
 html {
     scroll-behavior: smooth;
@@ -16,6 +33,10 @@ html {
     
 }
 
+section {
+    scroll-margin-top: 80px; /* offset to avoid being hidden under fixed nav */
+  }
+
 /* Basic styles for layout and aesthetics */
 body {
     font-family: Arial, sans-serif;
@@ -23,6 +44,10 @@ body {
     font-size: 20px; /* Adjust the base font size here */
     line-height: 1.6; /* Improves readability by increasing line height */
     color: #333; /* Neutral text colour */
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+
 }
 
 h1 {
@@ -51,19 +76,60 @@ a:hover {
 
 
 /* Main container styling */
-.main {
-    text-align: center;
-    padding: 20px;
-}
+.wrapper-main {
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+  
+  .main {
+    width: 100%;
+    padding: 0px;
+    box-sizing: border-box;
+  }
+
+  @media (max-width: 600px) {
+    html, body {
+      font-size: 14px; /* Slightly smaller font for mobile */
+    }
+  
+    h1 {
+      font-size: 1.5rem;
+    }
+  
+    h2 {
+      font-size: 1.3rem;
+    }
+  
+    h3 {
+      font-size: 1.1rem;
+    }
+  
+    a {
+      font-size: 0.95rem;
+    }
+  
+    .wrapper-main,
+    .main {
+      padding: 0 10px; /* Small horizontal padding on mobile */
+    }
+  }
+
+/* Removed redundant rule */
 /* Navigation Bar */
 .nav-wrapper {
     display: flex;                      /* Flexbox for layout */
     justify-content: space-between;     /* Space between nav links and social media */
     align-items: center;                /* Vertically align items */
-    background-color: #333;
+    background-color: white;
     padding: 10px 20px;
     width: 100%;
     box-sizing: border-box;             /* Ensure padding does not affect width */
+    position: fixed;
+    top: 0;
+    z-index: 1000;
 }
 
 /* Center the Nav Links */
@@ -77,7 +143,7 @@ a:hover {
     color: white;
     text-decoration: none;
     margin: 0 15px;
-    font-size: 22px; /* Increased font size here */
+    font-size: 22px; /* Increased font size */
     padding: 10px 20px;
     display: inline-block;
 }
@@ -88,38 +154,12 @@ a:hover {
     border-radius: 5px;
 }
 
-/* For Smaller Screens */
-@media (max-width: 600px) {
-    .nav-links a {
-        font-size: 18px; /* Smaller font size for mobile screens */
-    }
-
-    .nav-wrapper {
-        padding: 15px 10px; /* Adjust padding for better fit on small screens */
-    }
-
-    .nav-links {
-        justify-content: flex-start; /* Align links to the left on small screens */
-    }
-
-    /* Adjust layout for form inputs and buttons */
-    form input,
-    form textarea,
-    form button {
-        font-size: 1em; /* Adjust font size for smaller screens */
-    }
-
-    /* Adjust button sizes */
-    form button {
-        padding: 15px 30px; /* Smaller padding for mobile */
-    }
-}
-
+/* General Nav Wrapper Styles for Links */
 .nav-wrapper a {
     color: white;
     text-decoration: none;
     margin: 0 15px;
-    font-size: 22px; /* Increased font size here as well */
+    font-size: 22px; /* Increased font size */
     padding: 10px 20px;
     display: inline-block;
     transition: color 0.3s;
@@ -130,6 +170,57 @@ a:hover {
 .nav-wrapper a.active {
     color: #ddd; /* Subtle hover effect */
     border-bottom: 2px solid #fff; /* Indicate active link */
+}
+
+
+
+/* Mobile Menu Toggle (Hamburger Menu) */
+@media (max-width: 768px) {
+    .nav-wrapper {
+        position: relative;
+    }
+    
+    .nav-links {
+        display: none; /* Hide nav links by default on mobile */
+        width: 100%;
+        flex-direction: column; /* Stack vertically */
+    }
+    
+    .nav-links.show {
+        display: flex; /* Show nav links when 'show' class is added */
+    }
+
+    /* Hamburger Icon Styles */
+    .hamburger {
+        display: block; /* Show hamburger icon on mobile */
+        cursor: pointer;
+        font-size: 30px;
+        color: white;
+    }
+
+    /* Adjust the styling of the active hamburger icon */
+    .hamburger.active {
+        color: #ddd; /* Change hamburger icon color when active */
+    }
+}
+
+@media (max-width: 600px) {
+    .nav-wrapper {
+        flex-wrap: wrap; /* Keeps items on same line if there's space */
+        padding: 0pxpx 0px;
+    }
+
+    .nav-links {
+        flex-wrap: wrap; /* Allows links to wrap to second line if needed */
+        justify-content: center; /* Keeps it centered */
+    }
+
+    .nav-links a,
+    .nav-wrapper a {
+        font-size: 12px;
+        padding: 0px 00px;
+        margin: 4px 6px;
+    }
 }
 
 
@@ -155,6 +246,18 @@ a:hover {
 .social-media a:hover {
     color: #575757;                     /* Change icon color on hover */
 }
+
+@media (max-width: 600px) {
+    .social-media {
+      justify-content: center;   /* Center icons on small screens */
+      gap: 10px;                 /* Slightly bigger gap for touch */
+      margin-top: 10px;          /* Add spacing if stacked under nav */
+    }
+  
+    .social-media a {
+      font-size: 18px;           /* Slightly smaller icons */
+    }
+  }
 
 
 /* Header Section (Hero Section) */
@@ -192,7 +295,33 @@ header h3 {
 /* Paragraph Styling */
 header p {
     margin: 10px 0 20px 0; /* Top: 10px, Bottom: 20px */
+
 }
+
+/* ========== MEDIA QUERY FOR MOBILE DEVICES ========== */
+@media (max-width: 600px) {
+    header {
+      padding: 60px 15px;
+    }
+  
+    header h1 {
+      font-size: 32px;
+      margin-bottom: 15px;
+    }
+  
+    header h2,
+    header h3 {
+      font-size: 22px;
+      margin-bottom: 20px;
+    }
+  
+    header p {
+      font-size: 16px;
+      padding: 0 10px;
+    }
+  }
+
+
 /* General Section Styling */
 section {
     padding: 60px 20px;
@@ -232,6 +361,34 @@ body.secondary section {
 body, form, input, textarea, button {
     font-family: 'Roboto', sans-serif; /* Set Roboto font */
 }
+
+@media (max-width: 600px) {
+    section {
+      padding: 40px 15px;
+      min-height: auto;
+    }
+  
+    #home h1,
+    #about h2,
+    #volleyball h2,
+    #gallery h2,
+    #contact h2,
+    #resources h2,
+    #teams h2 {
+      font-size: 1.6em;
+    }
+  
+    #home p,
+    #about p,
+    #volleyball p,
+    #gallery p,
+    #contact p,
+    #resources p,
+    #teams p {
+      font-size: 1em;
+      padding: 0 10px;
+    }
+  }
 
 /* Form container */
 form {
@@ -293,7 +450,6 @@ form button:hover {
     border-bottom: 2px solid #fff; /* Highlight with an underline */
     font-weight: bold;            /* Optional: Make it bold */
 }
-
 /* Banner Container */
 .banner {
     width: 100%;                     /* Full width of the browser */
@@ -332,6 +488,20 @@ form button:hover {
 }
 
 
+@media (max-width: 600px) {
+    .banner {
+      height: calc(100vw * 0.2); /* Slightly taller on smaller screens for clarity */
+    }   
+    .footer-banner {
+      height: calc(100vw * 0.2); /* Slightly taller on smaller screens for clarity */
+    }
+  
+    .banner-img,
+    .footer-img {
+      object-fit: cover; /* Optional: 'cover' fills space better on tiny screens */
+    }
+  }
+
 
 /* Navigation Bar Styles */
 .nav-wrapper {
@@ -357,55 +527,13 @@ form button:hover {
     border-radius: 5px;
 }
 
-#sessions {
-    padding: 20px;
-    border: 1px solid transparent; /* Transparent border prevents margin collapse */
-}
-
-#sessions p {
-    margin-bottom: 1px; /* Reduced space for paragraphs */
-}
-
-.session-card {
-    border: 1000px solid #ddd;
-    border-radius: 8px;
-    padding: 10px;
-    margin: 10px auto;
-    max-width: 1600px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    text-align: left;
-}
-
-.session-card h3 {
-    font-size: 1.2em;
-    margin-bottom: 10px;
-}
-
-p {
-    margin-bottom: 10px; /* Reduce space below the paragraph */
-}
-
-#sessions {
-    padding: 0; /* Remove extra padding around the section */
-    margin: 0; /* Remove extra margin around the section */
-}
-
-.session-card {
-    margin: 10px auto; /* Ensure consistent spacing for the card */
-    max-width: 1200px; /* Optional: Adjust width if needed */
-    text-align: center; /* Align text inside the card */
-    border: 2px solid rgb(11, 14, 12);
-    border-radius: 8px;
-    padding: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.session-card:hover {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transform: translateY(-5px);
-    transition: 0.3s;
-}
-
+@media (max-width: 600px) {
+    .nav-wrapper a {
+      font-size: 14px;
+      padding: 8px 12px;
+      margin: 0 8px;
+    }
+  }
 
 /* Join Me Button Styling */
 .btn-join {
@@ -432,16 +560,16 @@ p {
 
 #join a.btn-join {
     display: inline-block; /* Ensures proper spacing */
+#join a.btn-join {
+    display: inline-block; /* Ensures proper spacing */
     margin-bottom: 20px; /* Add spacing below the button */
     padding: 10px 20px; /* Add padding to the button */
-    background-color: rgb(28, 170, 92);; /* Button background colour */
+    background-color: rgb(28, 170, 92); /* Button background colour */
     color: white; /* Button text colour */
     text-decoration: none; /* Remove underline */
     border-radius: 5px; /* Rounded corners */
     font-size: 16px; /* Adjust font size */
 }
-
-#join p {
     margin-bottom: 20px; /* Add spacing below the paragraph */
 }
 
@@ -460,14 +588,6 @@ p {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
     font-family: 'Arial', sans-serif;
     transition: all 0.3s ease-in-out;
-}
-
-/* Make form responsive on smaller screens */
-@media (max-width: 600px) {
-    #contactForm {
-        padding: 20px;
-        gap: 15px;
-    }
 }
 
 .nameFields {
@@ -586,21 +706,124 @@ p {
 #about .about-images img:hover {
     transform: scale(1.02); /* Slight zoom effect */
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Shadow effect */
+
 }
-/* Mobile and smaller screen adjustments */
-@media (max-width: 600px) {
-    #about .about-images img {
-        max-width: 90%; /* Allow image to be slightly smaller on mobile for better fit */
+
+
+
+#sessions {
+    padding: 20px;
+    border: 1px solid transparent; /* Transparent border prevents margin collapse */
+}
+
+#sessions p {
+    margin-bottom: 1px; /* Reduced space for paragraphs */
+}
+
+.session-card {
+    border: 1000px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 10px auto;
+    max-width: 1600px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.session-card h3 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+p {
+    margin-bottom: 10px; /* Reduce space below the paragraph */
+}
+
+#sessions {
+    padding: 0; /* Remove extra padding around the section */
+    margin: 0; /* Remove extra margin around the section */
+}
+
+.session-card {
+    margin: 10px auto; /* Ensure consistent spacing for the card */
+    max-width: 1200px; /* Optional: Adjust width if needed */
+    text-align: center; /* Align text inside the card */
+    border: 2px solid rgb(11, 14, 12);
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.session-card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+    transition: 0.3s;
+}
+
+@media (max-width: 768px) {
+    #about {
+      flex-direction: column; /* Stack the content vertically on small screens */
+      gap: 20px; /* Reduce the gap between sections */
     }
-}
+  
+    #about .about-content {
+      max-width: 100%; /* Allow content to take full width */
+      text-align: center; /* Center-align text */
+    }
+  
+    #about .about-images {
+      max-width: 100%; /* Ensure images don't overflow */
+    }
+  
+    #about .about-images img {
+      width: 90%; /* Make images larger on mobile */
+      aspect-ratio: 4/3; /* Adjust aspect ratio for better mobile display */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    #about {
+      padding: 40px 10px; /* Reduce padding on smaller screens */
+    }
+  
+    #about .about-content {
+      font-size: 1.1em; /* Slightly smaller font size for mobile */
+    }
+  
+    #about .about-images img {
+      width: 100%; /* Make images full-width on very small screens */
+    }
+  }
+  
+
+@media (max-width: 600px) {
+    /* Sessions Section */
+    #sessions {
+      padding: 10px; /* Less padding on smaller screens */
+      margin: 0;
+    }
+  
+    /* Session Cards */
+    .session-card {
+      max-width: 100%; /* Ensure full width on smaller screens */
+      margin: 10px; /* Ensure spacing around cards */
+      padding: 15px; /* Slightly more padding for touch-friendliness */
+    }
+  
+    /* Session Card Title */
+    .session-card h3 {
+      font-size: 1.1em; /* Slightly smaller font size for headings */
+    }
+  
+    /* Adjust Paragraphs */
+    p {
+      font-size: 1em; /* Adjust text size to improve readability */
+    }
+  }
+
+
 
 /* Tablet and larger screen adjustments */
-@media (max-width: 600px) {
-    #about .about-images img {
-        max-width: 95%; /* Adjust image size for tablet-sized screens */
-    }
-}
-
 h3 {
     margin-top: 20px; /* Adjust the value as needed */
 }
@@ -645,20 +868,7 @@ p {
     color: #0056b3; /* Darker blue on hover */
 }
 
-/* Responsive design for smaller screens */
-@media (max-width: 600px) {
-    .session-card {
-        padding: 15px; /* Reduce padding on smaller screens */
-    }
 
-    h3 {
-        font-size: 1.2rem; /* Slightly smaller heading text on mobile */
-    }
-
-    .more-info-link {
-        font-size: 1rem; /* Adjust link font size for readability */
-    }
-}
 
 
 /* Teams */
@@ -753,24 +963,59 @@ p {
     transform: scale(1.02); /* Slight zoom effect on hover */
 }
 
-/* Responsive Design */
-@media (max-width: 600px) {
+/* ========== MOBILE RESPONSIVENESS ========== */
+@media (max-width: 768px) {
+    /* Adjust container layout */
     .teams-container {
-        flex-direction: column;
-        gap: 25px;
+      flex-direction: column; /* Stack cards vertically */
+      gap: 20px; /* Reduce gap between cards */
     }
-
+  
+    /* Team Cards */
     .team-card {
-        max-width: 90%; /* Make cards wider on smaller screens */
-        min-height: 400px; /* Adjust minimum height for smaller screens */
+      max-width: 100%;
+      min-height: 400px; /* Reduce height for mobile */
+      padding: 15px; /* Adjust padding for smaller screens */
     }
-}
+  
+    /* Team Logos */
+    .team-logo {
+      width: 120px; /* Smaller logos on mobile */
+      height: 120px;
+    }
+  
+    /* Adjust text info layout */
+    .team-info p {
+      font-size: 1em; /* Slightly smaller font size */
+    }
+  
+    /* Team Photos */
+    .team-photo-container {
+      padding-top: 75%; /* Slightly adjust the aspect ratio */
+    }
+  
+    .team-photo {
+      margin-top: 5px; /* Smaller margin on mobile */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    /* Further reduce padding and text sizes for smaller screens */
+    .team-card {
+      padding: 10px;
+    }
+  
+    .team-logo {
+      width: 100px; /* Even smaller logos on very small screens */
+      height: 100px;
+    }
+  
+    .team-info p {
+      font-size: 0.9em; /* Smaller text for mobile */
+    }
+  }
 
 /*Gallery */
-
-/*Gallery */
-/* Use the same CSS for the gallery grid */
-
 
 
 #gallery {
@@ -782,8 +1027,6 @@ p {
     align-items: center;
     gap: 50px;  /* Increased gap between elements */
 }
-
-
 
 .large-image-container {
     position: relative;
@@ -880,6 +1123,74 @@ p {
 }
 
 
+
+/* For Tablets and Smaller Screens */
+@media (max-width: 768px) {
+    #gallery {
+        padding: 15px;
+    }
+
+    .carousel {
+        gap: 30px;  /* Reduced gap for smaller screens */
+    }
+
+    .large-image-container {
+        max-width: 90%; /* Ensures image is not too large on tablet */
+        aspect-ratio: 16/9; /* Maintain the aspect ratio */
+    }
+
+    .large-image-container img {
+        object-fit: cover;
+        height: auto;
+    }
+
+    .thumbnails img {
+        width: 90px;  /* Smaller thumbnail size */
+        height: 70px;
+    }
+
+    .nav-button {
+        font-size: 2em;
+        padding: 8px 12px;
+    }
+
+    .thumbnail-nav-button {
+        font-size: 2em;
+        padding: 12px;
+    }
+}
+
+/* For Mobile Screens */
+@media (max-width: 480px) {
+    #gallery {
+        padding: 10px;
+    }
+
+    .carousel {
+        gap: 20px;  /* Smaller gap for tighter layout */
+    }
+
+    .large-image-container {
+        max-width: 100%; /* Makes sure image fills the screen width */
+        aspect-ratio: 16/9; /* Maintain the aspect ratio */
+    }
+
+    .thumbnails img {
+        width: 70px;  /* Even smaller thumbnails for mobile */
+        height: 50px;
+    }
+
+    .nav-button {
+        font-size: 1.8em;
+        padding: 6px 10px;
+    }
+
+    .thumbnail-nav-button {
+        font-size: 1.8em;
+        padding: 10px;
+    }
+}
+
 /* Resources */
 
 .resource-grid {
@@ -943,6 +1254,49 @@ p {
     background-color: transparent; /* Keep the content background transparent to not override hover effect */
 }
 
+/* Responsive adjustments for smaller screens */
+@media (max-width: 1200px) {
+    .resource-grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 items per row on medium-sized screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .resource-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 items per row on small screens */
+    }
+
+    .resource-category img {
+        height: 250px; /* Adjust the height of the images for smaller screens */
+    }
+
+    .resource-category h3 {
+        font-size: 1.2rem; /* Slightly smaller font for headers */
+    }
+
+    .resource-category p {
+        font-size: 0.9rem; /* Slightly smaller text for descriptions */
+    }
+}
+
+@media (max-width: 480px) {
+    .resource-grid {
+        grid-template-columns: 1fr; /* 1 item per row on very small screens */
+    }
+
+    .resource-category img {
+        height: 200px; /* Reduce image height even more for very small screens */
+    }
+
+    .resource-category h3 {
+        font-size: 1rem; /* Further reduce the font size for headers */
+    }
+
+    .resource-category p {
+        font-size: 0.8rem; /* Further reduce text size for small screens */
+    }
+}
+
 /* Hero Section */
 
 .hero-image {
@@ -964,28 +1318,17 @@ p {
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
 }
 
-
-/* Responsive Design */
-@media (max-width: 600px) {
-    header h1 {
-        font-size: 2.5rem;
-    }
-
-    header h2 {
-        font-size: 1.2rem;
-    }
-
-    .cta-section {
-        padding: 15px;
-    }
-
-    .btn-join {
-        padding: 10px 20px;
-        font-size: 1rem;
-    }
-
+/* For medium screen sizes (tablets and up) */
+@media (max-width: 768px) {
     .hero-img {
-        max-width: 50%; /* Reduce size further for small screens */
+        max-width: 90%; /* Slightly larger on tablets */
+    }
+}
+
+/* For smaller screen sizes (mobile devices) */
+@media (max-width: 480px) {
+    .hero-img {
+        max-width: 100%; /* Make the image take full width on mobile */
     }
 }
 
@@ -1036,6 +1379,8 @@ header {
         transform: translateY(0);
     }
 }
+
+
 
 /* Equipment Section */   
 /* Container for the volleyball boxes */
@@ -1098,46 +1443,22 @@ figcaption {
     transform: translateY(10px);
     animation: fadeIn 0.6s ease-in-out forwards;
 }
-
-/* Example of ensuring images/videos scale correctly */
-/* Responsive Font Scaling */
-.text {
-    font-size: calc(1vw + 1vh); /* Scales proportionally */
-    text-align: center;
+iframe {
+    height: auto; /* Height adjusts based on the aspect ratio */
+    max-width: 100%; /* Ensure it does not exceed container width */
+    aspect-ratio: 16/9; /* Maintain a 16:9 aspect ratio by default */
+    border: none; /* Remove iframe border */
 }
-
-/* Example of ensuring images/videos scale correctly */
-img, video {
-    max-width: 100%;
-    height: auto;
-    border-radius: 5px;
-}
-
-@media (max-aspect-ratio: 16/9) {
-    .container {
-        width: 100vmin;
-        height: auto;
-    }
-}
-
-@media (min-aspect-ratio: 16/9) {
-    .container {
-        height: 100vmin;
-        width: auto;
-    }
-}
-
-/* Mobile-friendly adjustments */
+/* For smaller screens (Mobile devices) */
 @media (max-width: 768px) {
-    .container {
-        width: 95vmin;
-        padding: 4vmin;
-        border-radius: 5px;
+    iframe {
+        aspect-ratio: 16/9; /* Keep aspect ratio consistent */
     }
-    .text {
-        font-size: calc(2vw + 2vh); /* Larger text for mobile */
-    }
-    body {
-        overflow: auto; /* Allow scrolling on mobile */
+}
+
+/* For very small screens (Portrait mode on mobile devices) */
+@media (max-width: 576px) {
+    iframe {
+        aspect-ratio: 4/3; /* Adjust aspect ratio to 4:3 for smaller screens */
     }
 }
