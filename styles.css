@@ -669,96 +669,104 @@ form button:hover {
 /* About Section Styling */
 
 #about {
-    display: flex; /* Use flexbox for side-by-side layout */
-    flex-direction: row; /* Arrange items horizontally */
-    align-items: left; /* Vertically center the items */
-    justify-content: left; /* Center the content horizontally */
-    padding: 60px 20px; /* Add spacing around the section */
-    min-height: 100vh; /* Ensure it takes full viewport height */
-    background-color: #f4f4f4; /* Optional: Set background for better visibility */
-    gap: 40px; /* Add space between the images and text */
-}
-
-#about .about-content {
-    text-align: center; /* Center-align text */
-    flex: 3; /* Make the text take up more space */
-    max-width: 60%; /* Limit text content width */
-}
-
-#about .about-images {
-    flex: 3; /* Allow equal space for left and right sections */
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px; /* Spacing between images */
+    justify-content: center;
+    padding: 60px 20px;
+    min-height: 100vh;
+    background-color: #f4f4f4;
+    gap: 40px;
+}
+
+#about .about-content {
+    text-align: center;
+    width: 100%;
+    max-width: 2000px;
+    padding: 0 40px;
+    
+}
+
+#about .about-images {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    gap: 20px;
+    width: 100%;
+    max-width: 1600px; /* Contain the layout a bit */
+    padding: 0 20px;
 }
 
 #about .about-images img {
-    width: 70%; /* Ensures images are the same size */
-    aspect-ratio: 16/9; /* Forces the same aspect ratio for all images */
-    object-fit: cover; /* Ensures images fill the set dimensions without distortion */
-    border-radius: 10px;
+    width: 300px;
+    max-width: 90%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    border-radius: 12px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    will-change: transform; /* Optimizes the transform effect */
-    image-rendering: smooth; /* Ensures smooth image rendering */
 }
 
 #about .about-images img:hover {
-    transform: scale(1.02); /* Slight zoom effect */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Shadow effect */
-
+    transform: scale(1.03);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
 }
 
-
-
+/* Sessions Section */
 #sessions {
+    padding: 60px 40px;
+    background-color: #fff;
+    width: 100%;
+}
+
+.session-card {
+    max-width: 1500px;
+    margin: 20px auto;
+    border: 2px solid #0b0e0c;
+    border-radius: 10px;
     padding: 20px;
-    border: 1px solid transparent; /* Transparent border prevents margin collapse */
-}
-
-#sessions p {
-    margin-bottom: 1px; /* Reduced space for paragraphs */
-}
-
-.session-card {
-    border: 1000px solid #ddd;
-    border-radius: 8px;
-    padding: 10px;
-    margin: 10px auto;
-    max-width: 1600px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    text-align: left;
-}
-
-.session-card h3 {
-    font-size: 1.2em;
-    margin-bottom: 10px;
-}
-
-p {
-    margin-bottom: 10px; /* Reduce space below the paragraph */
-}
-
-#sessions {
-    padding: 0; /* Remove extra padding around the section */
-    margin: 0; /* Remove extra margin around the section */
-}
-
-.session-card {
-    margin: 10px auto; /* Ensure consistent spacing for the card */
-    max-width: 1200px; /* Optional: Adjust width if needed */
-    text-align: center; /* Align text inside the card */
-    border: 2px solid rgb(11, 14, 12);
-    border-radius: 8px;
-    padding: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #fafafa;
 }
 
 .session-card:hover {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transform: translateY(-5px);
-    transition: 0.3s;
+    transform: translateY(-6px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
+
+.session-card h3 {
+    font-size: 1.7rem;
+    margin-bottom: 15px;
+    color: #222;
+}
+
+.session-card p {
+    margin-bottom: 12px;
+    color: #444;
+}
+
+p {
+    margin-bottom: 10px;
+}
+
+/* General paragraph style (if needed globally) */
+p {
+    margin-bottom: 10px;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+    #about .about-images img {
+        width: 100%;
+    }
+
+    .session-card {
+        padding: 15px;
+    }
+}
+
 
 @media (max-width: 768px) {
     #about {
