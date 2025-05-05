@@ -126,7 +126,7 @@ a:hover {
   .hero-content {
     position: relative;
     z-index: 2;
-    max-width: 1000px;
+    max-width: 100%;
     padding: 60px 30px;
     background: rgba(0, 0, 0, 0.548); /* slight darker background to increase text readability */
     border-radius: 16px;
@@ -766,7 +766,7 @@ form button:hover {
 #about .about-content {
     text-align: center;
     width: 100%;
-    max-width: 2000px;
+    max-width: 100%;
     padding: 0 40px;
     
 }
@@ -778,7 +778,7 @@ form button:hover {
     align-items: stretch;
     gap: 20px;
     width: 100%;
-    max-width: 1600px; /* Contain the layout a bit */
+    max-width: 100%; /* Contain the layout a bit */
     padding: 0 20px;
 }
 
@@ -804,7 +804,7 @@ form button:hover {
 }
 
 .session-card {
-    max-width: 1500px;
+    max-width: 100%;
     margin: 20px auto;
     border: 2px solid #0b0e0c;
     border-radius: 10px;
@@ -989,7 +989,7 @@ p {
     gap: 50px; /* Larger gap between team cards */
     flex-wrap: wrap;
     margin: 0 auto;
-    max-width: 2000px; /* Increased max-width for a much larger container */
+    max-width: 100%; /* Increased max-width for a much larger container */
     width: 100%; /* Full width to take up all available space */
 }
 
@@ -1136,7 +1136,7 @@ p {
 .large-image-container {
     position: relative;
     width: 100%;  /* Full width */
-    max-width: 1600px;  /* Even larger max-width for large image */
+    max-width: 90%;  /* Even larger max-width for large image */
     aspect-ratio: 16/9;
     background-color: #eaeaea;
     border: 2px solid #ccc;
@@ -1186,7 +1186,7 @@ p {
     display: flex;
     justify-content: center;
     gap: 15px;  /* Reduced gap between thumbnails */
-    max-width: 1600px;  /* Prevents stretching too wide */
+    max-width: 90%;  /* Prevents stretching too wide */
     overflow: hidden;  /* Hides the scrollbar */
 }
 
@@ -1485,7 +1485,7 @@ header {
     border-radius: 15px;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Slightly larger shadow for emphasis */
     margin: 30px auto;
-    max-width: 1000px; /* Wider container for the header */
+    max-width: 100%; /* Wider container for the header */
 }
 
 header h1 {
