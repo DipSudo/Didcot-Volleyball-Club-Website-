@@ -416,7 +416,14 @@ section {
     align-items: center;
     text-align: center;
     transition: background-color 0.5s, color 0.5s;
+    margin: 0 auto;
+    padding: 4vh 2vw;
+    min-height: 80vh;
+    max-height: 100vh;
+    box-sizing: border-box;
+    width: 100%;
 }
+
 body.secondary section {
     justify-content: normal;
 }
