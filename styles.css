@@ -1145,11 +1145,12 @@ p {
     display: flex;
     justify-content: center;
     align-items: center;
+    
 }
 
 .large-image-container img {
     width: 100%;  /* Full width of the container */
-    height: auto;
+    height: 100%;
     object-fit: cover;
 }
 /* Scoped navigation button styles for gallery */
@@ -1181,6 +1182,8 @@ p {
 #gallery #next-button {
     right: 10px;
 }
+
+
 
 .thumbnails {
     display: flex;
