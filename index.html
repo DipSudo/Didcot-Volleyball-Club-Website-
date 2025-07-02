@@ -255,40 +255,44 @@
         <p>If you have any questions, feel free to contact us using the form below.</p>
 
 
-        <form id="contactForm" action="mailto:your-email@example.com" method="post" enctype="text/plain">
-            <div class="nameFields">
-                <div class="formField">
-                    <label for="firstName">First Name:</label>
-                    <input type="text" id="firstName" name="firstName" required>
-                </div>
-                <div class="formField">
-                    <label for="lastName">Last Name:</label>
-                    <input type="text" id="lastName" name="lastName" required>
-                </div>
-            </div>
+    <form action="https://formsubmit.co/DidcotVolleyball@gmail.com" method="POST">
+        <!-- Optional hidden fields -->
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" value="thankyou.html">
         
+        <!-- Honeypot field for spam protection -->
+        <input type="text" name="_honey" style="display:none">
+
+        <div class="nameFields">
             <div class="formField">
-                <label for="email">Your Email:</label>
-                <input type="email" id="email" name="email" required>
+                <label for="firstName">First Name:</label>
+                <input type="text" id="firstName" name="First Name" required>
             </div>
-        
             <div class="formField">
-                <label for="message">Your Message:</label>
-                <textarea id="message" name="message" rows="5" required></textarea>
+                <label for="lastName">Last Name:</label>
+                <input type="text" id="lastName" name="Last Name" required>
             </div>
-        
-            <div class="checkboxField">
-                <input type="checkbox" id="privacyConsent" required aria-required="true">
-                <label for="privacyConsent">
-                    I agree to the <a href="privacy.html" target="_blank">Privacy Policy</a>.
-                </label>
-            </div>
-            
-            
-            <button type="submit">Send Message</button>
-        </form>
-        
-        
+        </div>
+
+        <div class="formField">
+            <label for="email">Your Email:</label>
+            <input type="email" id="email" name="Email" required>
+        </div>
+
+        <div class="formField">
+            <label for="message">Your Message:</label>
+            <textarea id="message" name="Message" rows="5" required></textarea>
+        </div>
+
+        <div class="checkboxField">
+            <input type="checkbox" id="privacyConsent" required aria-required="true">
+            <label for="privacyConsent">
+                I agree to the <a href="privacy.html" target="_blank">Privacy Policy</a>.
+            </label>
+        </div>
+
+        <button type="submit">Send Message</button>
+    </form>
 
     </section>
 
