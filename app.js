@@ -12,21 +12,21 @@ document.querySelectorAll('.nav-wrapper a').forEach(anchor => {
 });
 
 
-const form = document.querySelector("form");
+// const form = document.querySelector("form");
 
-form.addEventListener("submit", (e) => {
-    const name = form.querySelector("input[name='name']").value.trim();
-    const email = form.querySelector("input[name='email']").value.trim();
-    const message = form.querySelector("textarea[name='message']").value.trim();
+// form.addEventListener("submit", (e) => {
+//     const name = form.querySelector("input[name='name']").value.trim();
+//     const email = form.querySelector("input[name='email']").value.trim();
+//     const message = form.querySelector("textarea[name='message']").value.trim();
 
-    if (!name || !email || !message) {
-        e.preventDefault();
-        alert("Please fill out all fields.");
-    } else if (!/\S+@\S+\.\S+/.test(email)) {
-        e.preventDefault();
-        alert("Please enter a valid email address.");
-    }
-});
+//     if (!name || !email || !message) {
+//         e.preventDefault();
+//         alert("Please fill out all fields.");
+//     } else if (!/\S+@\S+\.\S+/.test(email)) {
+//         e.preventDefault();
+//         alert("Please enter a valid email address.");
+//     }
+// });
 
 // JavaScript to add active class on click
 const navLinks = document.querySelectorAll('.nav-links a');
