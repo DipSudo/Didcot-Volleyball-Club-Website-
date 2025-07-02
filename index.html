@@ -255,19 +255,22 @@
         <p>If you have any questions, feel free to contact us using the form below.</p>
 
 
-    <form action="https://formsubmit.co/yourgmail@gmail.com" method="POST">
-    <input type="hidden" name="_captcha" value="false">
-    <input type="hidden" name="_next" value="thankyou.html">
+    <form action="https://formsubmit.co/didcotvolleyball@gmail.com" method="POST">
+    <!-- Required Formsubmit hidden settings -->
+    <!-- <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_next" value="thankyou.html"> -->
+
+    <!-- Honeypot: DO NOT add required here -->
     <input type="text" name="_honey" style="display:none">
 
     <div class="nameFields">
         <div class="formField">
-            <label for="firstName">First Name:</label>
-            <input type="text" id="firstName" name="First Name" required>
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" name="First Name" required>
         </div>
         <div class="formField">
-            <label for="lastName">Last Name:</label>
-            <input type="text" id="lastName" name="Last Name" required>
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" name="Last Name" required>
         </div>
     </div>
 
@@ -281,15 +284,16 @@
         <textarea id="message" name="Message" rows="5" required></textarea>
     </div>
 
-    <div class="checkboxField">
-        <input type="checkbox" id="privacyConsent" name="Privacy Consent" required aria-required="true">
+    <div class="formField checkboxField">
+        <input type="checkbox" id="privacyConsent" name="Privacy Consent" required>
         <label for="privacyConsent">
-            I agree to the <a href="privacy.html" target="_blank">Privacy Policy</a>.
+        I agree to the <a href="privacy.html" target="_blank">Privacy Policy</a>.
         </label>
     </div>
 
     <button type="submit">Send Message</button>
     </form>
+
 
 
     </section>
